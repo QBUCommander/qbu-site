@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHYSICAL RECORDS // QBU Vibraline</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="physical-records.css">
+</head>
+<body>
+    <div class="scan-line"></div>
+    
+    <!-- Header -->
+    <header class="hub-header">
+        <div class="header-left">
+            <img src="Vibraline_Symbol.png" alt="Vibraline" class="logo-small">
+            <div class="header-text">
+                <span class="header-title">THE QUANTUM BODY UNIVERSE</span>
+                <span class="header-subtitle">VIBRALINE INTELLIGENCE NETWORK</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="clearance-badge" id="clearance-badge">GUEST</span>
+            <button id="logout-btn" class="logout-btn">LOGOUT</button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">HUB</a>
+        <a href="origin-file.html" class="nav-link">ORIGIN FILE</a>
+        <a href="dossiers.html" class="nav-link">DOSSIERS</a>
+        <a href="transmissions.html" class="nav-link">TRANSMISSIONS</a>
+        <a href="visual-archives.html" class="nav-link">VISUAL ARCHIVES</a>
+        <a href="command-log.html" class="nav-link">COMMAND LOG</a>
+        <a href="zones.html" class="nav-link">ZONES</a>
+        <a href="physical-records.html" class="nav-link active">PHYSICAL RECORDS</a>
+            <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D;</a>
+    </nav>
+    <div class="global-search-bar" id="global-search-bar" style="display:none;">
+        <div class="search-container">
+            <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
+            <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+        </div>
+        <div id="global-search-results" class="search-results"></div>
+    </div>
+
+    <!-- Physical Records Main -->
+    <main class="records-container">
+        <!-- Header -->
+        <section class="records-header">
+            <h1 class="page-title">
+                <span class="title-bracket">[</span>
+                PHYSICAL RECORDS
+                <span class="title-bracket">]</span>
+            </h1>
+            <p class="page-subtitle">MISSION ARTIFACTS // INTEL FILES // FIELD GEAR</p>
+            <div class="records-description">
+                <p>These are tangible pieces of the QBU—artifacts recovered from missions, intel files declassified for civilian access, and field gear you can carry with you. Each item is catalogued, numbered, and ready for acquisition.</p>
+            </div>
+        </section>
+
+        <!-- Search & Filter -->
+        <section class="records-controls">
+            <input type="text" id="search-records" class="terminal-input" placeholder="SEARCH ARTIFACTS...">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">ALL RECORDS</button>
+                <button class="filter-btn" data-category="intel">INTEL FILES</button>
+                <button class="filter-btn" data-category="artwork">RECOVERED ARTWORK</button>
+                <button class="filter-btn" data-category="field-gear">FIELD GEAR</button>
+                <button class="filter-btn" data-category="services">AGENT SERVICES</button>
+            </div>
+        </section>
+
+        <!-- Records Grid -->
+        <section class="records-catalog">
+            <!-- Intel Files (PDFs) -->
+            <div class="record-card" data-category="intel">
+                <div class="record-header">
+                    <span class="artifact-id">ARTIFACT #001-PDF</span>
+                    <span class="clearance-tag vibraline-free">FREE: VIBRALINE</span>
+                </div>
+                <div class="record-image">
+                    <span class="image-placeholder">📄</span>
+                </div>
+                <h3 class="record-title">Mission Brief: Volume 1 Complete</h3>
+                <p class="record-description">Full PDF of QBU Volume 1. Classified intel on CSH, TQB, and the first Null Zone incursion. Digital artifact for archival purposes.</p>
+                <div class="record-meta">
+                    <span class="record-type">DIGITAL FILE</span>
+                    <span class="record-price">$12.00</span>
+                </div>
+                <!-- Gumroad Button - Replace with your actual product link -->
+                <a href="https://gumroad.com/your-product-link" class="acquire-btn gumroad-button" target="_blank" data-gumroad-single-product="true">
+                    ACQUIRE ARTIFACT
+                </a>
+            </div>
+
+            <!-- Prints -->
+            <div class="record-card" data-category="artwork">
+                <div class="record-header">
+                    <span class="artifact-id">ARTIFACT #002-ART</span>
+                    <span class="clearance-tag open">OPEN ACCESS</span>
+                </div>
+                <div class="record-image">
+                    <span class="image-placeholder">🖼ï¸</span>
+                </div>
+                <h3 class="record-title">Field Sketch: TQB Portrait</h3>
+                <p class="record-description">8x10" print of original TQB character art. Recovered from Vibraline Hub archives. Museum-quality print on archival paper.</p>
+                <div class="record-meta">
+                    <span class="record-type">PHYSICAL PRINT</span>
+                    <span class="record-price">$25.00</span>
+                </div>
+                <a href="https://gumroad.com/your-product-link" class="acquire-btn gumroad-button" target="_blank">
+                    ACQUIRE ARTIFACT
+                </a>
+            </div>
+
+            <!-- Original Artwork -->
+            <div class="record-card" data-category="artwork">
+                <div class="record-header">
+                    <span class="artifact-id">ARTIFACT #003-OG</span>
+                    <span class="clearance-tag limited">LIMITED</span>
+                </div>
+                <div class="record-image">
+                    <span class="image-placeholder">🎨</span>
+                </div>
+                <h3 class="record-title">Original: The Whisper Concept Art</h3>
+                <p class="record-description">One-of-one original illustration. Hand-drawn concept art of The Whisper. Ink and digital hybrid on 11x14" paper. Comes with certificate of authenticity.</p>
+                <div class="record-meta">
+                    <span class="record-type">ORIGINAL ARTWORK</span>
+                    <span class="record-price">$400.00</span>
+                </div>
+                <a href="https://gumroad.com/your-product-link" class="acquire-btn gumroad-button" target="_blank">
+                    ACQUIRE ARTIFACT
+                </a>
+            </div>
+
+            <!-- Stickers -->
+            <div class="record-card" data-category="field-gear">
+                <div class="record-header">
+                    <span class="artifact-id">ARTIFACT #004-GEAR</span>
+                    <span class="clearance-tag open">OPEN ACCESS</span>
+                </div>
+                <div class="record-image">
+                    <span class="image-placeholder">⚡</span>
+                </div>
+                <h3 class="record-title">Vibraline Insignia Sticker Pack</h3>
+                <p class="record-description">Set of 5 vinyl stickers. Vibraline logo, faction symbols, and character icons. Waterproof, UV-resistant. Mark your gear.</p>
+                <div class="record-meta">
+                    <span class="record-type">FIELD GEAR</span>
+                    <span class="record-price">$8.00</span>
+                </div>
+                <a href="https://gumroad.com/your-product-link" class="acquire-btn gumroad-button" target="_blank">
+                    ACQUIRE ARTIFACT
+                </a>
+            </div>
+
+            <!-- Journals -->
+            <div class="record-card" data-category="field-gear">
+                <div class="record-header">
+                    <span class="artifact-id">ARTIFACT #005-GEAR</span>
+                    <span class="clearance-tag open">OPEN ACCESS</span>
+                </div>
+                <div class="record-image">
+                    <span class="image-placeholder">📓</span>
+                </div>
+                <h3 class="record-title">Field Journal: Emotioneering Log</h3>
+                <p class="record-description">Custom-designed journal for tracking resonance, emotions, and creative process. Inspired by Vibraline field logs. 120 pages, hardcover.</p>
+                <div class="record-meta">
+                    <span class="record-type">FIELD GEAR</span>
+                    <span class="record-price">$18.00</span>
+                </div>
+                <a href="https://gumroad.com/your-product-link" class="acquire-btn gumroad-button" target="_blank">
+                    ACQUIRE ARTIFACT
+                </a>
+            </div>
+
+            <!-- Commissions -->
+            <div class="record-card" data-category="services">
+                <div class="record-header">
+                    <span class="artifact-id">SERVICE #001</span>
+                    <span class="clearance-tag limited">LIMITED SLOTS</span>
+                </div>
+                <div class="record-image">
+                    <span class="image-placeholder">✏️</span>
+                </div>
+                <h3 class="record-title">Custom Character Commission</h3>
+                <p class="record-description">Commission a custom character or scene in the QBU art style. Includes concept consultation, sketch approval, and final digital file. Full-color, detailed illustration.</p>
+                <div class="record-meta">
+                    <span class="record-type">AGENT SERVICE</span>
+                    <span class="record-price">$200.00+</span>
+                </div>
+                <a href="https://gumroad.com/your-product-link" class="acquire-btn gumroad-button" target="_blank">
+                    REQUEST SERVICE
+                </a>
+            </div>
+
+            <!-- 1:1 Sessions -->
+            <div class="record-card" data-category="services">
+                <div class="record-header">
+                    <span class="artifact-id">SERVICE #002</span>
+                    <span class="clearance-tag limited">LIMITED SLOTS</span>
+                </div>
+                <div class="record-image">
+                    <span class="image-placeholder">💬</span>
+                </div>
+                <h3 class="record-title">1:1 Worldbuilding Session</h3>
+                <p class="record-description">60-minute consultation on your creative project. Brand development, worldbuilding, character design, or creative strategy. Learn from the QBU process.</p>
+                <div class="record-meta">
+                    <span class="record-type">AGENT SERVICE</span>
+                    <span class="record-price">$150.00</span>
+                </div>
+                <a href="https://gumroad.com/your-product-link" class="acquire-btn gumroad-button" target="_blank">
+                    REQUEST SERVICE
+                </a>
+            </div>
+
+            <!-- More PDF -->
+            <div class="record-card" data-category="intel">
+                <div class="record-header">
+                    <span class="artifact-id">ARTIFACT #006-PDF</span>
+                    <span class="clearance-tag vibraline-free">FREE: VIBRALINE</span>
+                </div>
+                <div class="record-image">
+                    <span class="image-placeholder">📄</span>
+                </div>
+                <h3 class="record-title">Dossier Collection: All Agents</h3>
+                <p class="record-description">Complete collection of character dossiers. Includes extended profiles, backstories, and classified intel not available on the website.</p>
+                <div class="record-meta">
+                    <span class="record-type">DIGITAL FILE</span>
+                    <span class="record-price">$8.00</span>
+                </div>
+                <a href="https://gumroad.com/your-product-link" class="acquire-btn gumroad-button" target="_blank">
+                    ACQUIRE ARTIFACT
+                </a>
+            </div>
+        </section>
+
+        <!-- Vibraline Free Notice -->
+        <section class="vibraline-notice">
+            <div class="notice-content">
+                <h3 class="notice-title">⚡ VIBRALINE BENEFIT</h3>
+                <p class="notice-text">All PDF intel files are <strong>FREE</strong> for Vibraline-tier supporters. Upgrade your clearance to access the full archive at no additional cost.</p>
+                <a href="https://yoursubstack.com/subscribe" class="notice-btn" target="_blank">
+                    UPGRADE TO VIBRALINE
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+        <p>VIBRALINE INTELLIGENCE NETWORK // QBU v0.1 // CLASSIFIED MATERIAL</p>
+    </footer>
+
+    <!-- Gumroad Script -->
+    <script src="https://gumroad.com/js/gumroad.js"></script>
+    <script src="physical-records.js"></script>
+    <script src="global-search.js"></script>
+</body>
+</html>

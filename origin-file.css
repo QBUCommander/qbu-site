@@ -1,0 +1,428 @@
+/* ============================================
+   ORIGIN FILE - CREATOR STORY + LORE
+   ============================================ */
+
+.origin-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 200px);
+}
+
+/* Hero Section */
+.origin-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 3rem 0;
+    border-bottom: 2px solid var(--neon-blue);
+}
+
+.origin-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.origin-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.origin-clearance {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--neon-blue);
+    background: rgba(0, 217, 255, 0.1);
+}
+
+.clearance-stamp {
+    color: var(--neon-blue);
+    font-size: 0.8rem;
+    letter-spacing: 0.15rem;
+}
+
+/* Chapter Navigation */
+.chapter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+    justify-content: center;
+}
+
+.chapter-btn {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chapter-btn:hover,
+.chapter-btn.active {
+    background: rgba(0, 217, 255, 0.15);
+    border-color: var(--neon-blue);
+    color: var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+/* Chapter Sections */
+.chapter {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.chapter.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chapter-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--neon-blue);
+}
+
+.chapter-number {
+    font-size: 3rem;
+    color: var(--neon-blue);
+    font-weight: bold;
+    opacity: 0.3;
+}
+
+.chapter-title {
+    font-size: 2rem;
+    color: var(--neon-blue);
+    letter-spacing: 0.1rem;
+}
+
+/* Chapter Body */
+.chapter-body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.chapter-text {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+}
+
+.chapter-text.lead {
+    font-size: 1.4rem;
+    color: var(--neon-blue);
+    font-weight: normal;
+}
+
+.chapter-text strong {
+    color: var(--accent-cyan);
+}
+
+.chapter-text em {
+    color: var(--neon-blue);
+    font-style: italic;
+}
+
+/* Lore Block */
+.lore-block {
+    padding: 2rem;
+    background: rgba(0, 217, 255, 0.05);
+    border-left: 4px solid var(--neon-blue);
+}
+
+/* Personal Block */
+.personal-block {
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid var(--accent-cyan);
+}
+
+/* Divider */
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    margin: 2rem 0;
+}
+
+/* Quote */
+.origin-quote {
+    font-size: 1.3rem;
+    color: var(--accent-cyan);
+    font-style: italic;
+    padding: 2rem;
+    border-left: 3px solid var(--accent-cyan);
+    margin: 2rem 0;
+    background: rgba(0, 255, 255, 0.05);
+}
+
+/* Subsection Title */
+.subsection-title {
+    font-size: 1.5rem;
+    color: var(--neon-blue);
+    letter-spacing: 0.15rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+/* System Breakdown */
+.system-breakdown {
+    padding: 2rem;
+    background: rgba(10, 14, 39, 0.6);
+    border: 1px solid var(--neon-blue);
+}
+
+.system-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--neon-blue);
+    margin-bottom: 1.5rem;
+}
+
+.system-item:last-child {
+    margin-bottom: 0;
+}
+
+.system-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px var(--neon-blue));
+}
+
+.system-content {
+    flex: 1;
+}
+
+.system-name {
+    font-size: 1.2rem;
+    color: var(--neon-blue);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.system-description {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Memory Card */
+.memory-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--accent-cyan);
+}
+
+.memory-image {
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--accent-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder {
+    font-size: 4rem;
+    opacity: 0.5;
+}
+
+.memory-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Commander Section */
+.commander-intro {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: rgba(0, 217, 255, 0.05);
+    border: 2px solid var(--neon-blue);
+}
+
+.commander-image {
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--neon-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.commander-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.commander-dossier {
+    padding: 2rem;
+    background: rgba(10, 14, 39, 0.6);
+    border: 1px solid var(--neon-blue);
+}
+
+.dossier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.dossier-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 2px solid var(--neon-blue);
+}
+
+.dossier-label {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+}
+
+.dossier-value {
+    color: var(--neon-blue);
+    font-size: 1rem;
+}
+
+/* Transmission Grid */
+.transmission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.transmission-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(10, 14, 39, 0.6);
+    border: 2px solid var(--neon-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.transmission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
+    border-color: var(--accent-cyan);
+}
+
+.transmission-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px var(--neon-blue));
+}
+
+.transmission-name {
+    font-size: 1.1rem;
+    color: var(--neon-blue);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.transmission-description {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-align: center;
+    margin: 0;
+}
+
+.transmission-card:hover .transmission-name {
+    color: var(--accent-cyan);
+}
+
+/* Closing Message */
+.closing-message {
+    padding: 3rem 2rem;
+    background: rgba(0, 217, 255, 0.05);
+    border: 2px solid var(--neon-blue);
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .origin-container {
+        padding: 1rem;
+    }
+    
+    .origin-title {
+        font-size: 2rem;
+    }
+    
+    .chapter-nav {
+        flex-direction: column;
+    }
+    
+    .chapter-btn {
+        width: 100%;
+    }
+    
+    .chapter-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .chapter-number {
+        font-size: 2rem;
+    }
+    
+    .chapter-title {
+        font-size: 1.5rem;
+    }
+    
+    .memory-card,
+    .commander-intro {
+        grid-template-columns: 1fr;
+    }
+    
+    .memory-image,
+    .commander-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .transmission-grid {
+        grid-template-columns: 1fr;
+    }
+}

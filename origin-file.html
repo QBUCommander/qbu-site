@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORIGIN FILE // QBU Vibraline</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="origin-file.css">
+</head>
+<body>
+    <div class="scan-line"></div>
+    
+    <!-- Header -->
+    <header class="hub-header">
+        <div class="header-left">
+            <img src="Vibraline_Symbol.png" alt="Vibraline" class="logo-small">
+            <div class="header-text">
+                <span class="header-title">THE QUANTUM BODY UNIVERSE</span>
+                <span class="header-subtitle">VIBRALINE INTELLIGENCE NETWORK</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="clearance-badge" id="clearance-badge">GUEST</span>
+            <button id="logout-btn" class="logout-btn">LOGOUT</button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">HUB</a>
+        <a href="origin-file.html" class="nav-link active">ORIGIN FILE</a>
+        <a href="dossiers.html" class="nav-link">DOSSIERS</a>
+        <a href="transmissions.html" class="nav-link">TRANSMISSIONS</a>
+        <a href="visual-archives.html" class="nav-link">VISUAL ARCHIVES</a>
+        <a href="command-log.html" class="nav-link">COMMAND LOG</a>
+        <a href="zones.html" class="nav-link">ZONES</a>
+        <a href="physical-records.html" class="nav-link">PHYSICAL RECORDS</a>
+            <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D;</a>
+    </nav>
+    <div class="global-search-bar" id="global-search-bar" style="display:none;">
+        <div class="search-container">
+            <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
+            <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+        </div>
+        <div id="global-search-results" class="search-results"></div>
+    </div>
+
+    <!-- Origin File Main -->
+    <main class="origin-container">
+        <!-- Hero Section -->
+        <section class="origin-hero">
+            <h1 class="origin-title">
+                <span class="title-bracket">[</span>
+                ORIGIN FILE
+                <span class="title-bracket">]</span>
+            </h1>
+            <p class="origin-subtitle">WHERE IT ALL BEGAN</p>
+            <div class="origin-clearance">
+                <span class="clearance-stamp">CLEARANCE: OPEN ACCESS</span>
+            </div>
+        </section>
+
+        <!-- Chapter Navigation -->
+        <nav class="chapter-nav">
+            <button class="chapter-btn active" data-chapter="genesis">GENESIS</button>
+            <button class="chapter-btn" data-chapter="what-is">WHAT IS THE QBU</button>
+            <button class="chapter-btn" data-chapter="why-how">WHY & HOW</button>
+            <button class="chapter-btn" data-chapter="commander">THE COMMANDER</button>
+            <button class="chapter-btn" data-chapter="transmission">TRANSMISSION POINTS</button>
+                <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D;</a>
+    </nav>
+    <div class="global-search-bar" id="global-search-bar" style="display:none;">
+        <div class="search-container">
+            <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
+            <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+        </div>
+        <div id="global-search-results" class="search-results"></div>
+    </div>
+
+        <!-- Chapter Content -->
+        <article class="origin-content">
+            <!-- Chapter 1: Genesis -->
+            <section class="chapter active" id="chapter-genesis">
+                <div class="chapter-header">
+                    <span class="chapter-number">01</span>
+                    <h2 class="chapter-title">GENESIS</h2>
+                </div>
+                
+                <div class="chapter-body">
+                    <div class="lore-block">
+                        <p class="chapter-text lead">The Quantum Body Universe was born at the intersection of survival, imagination, and emotional intelligence.</p>
+                        
+                        <p class="chapter-text">It is a living world where feelings are technology, intuition is strategy, and healing is not passive.</p>
+                        
+                        <p class="chapter-text">If you've ever felt too sensitive for this world—or too sharp to be contained by it—you're already fluent here.</p>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="personal-block">
+                        <p class="chapter-text">This universe didn't start as a comic. It started as a question I couldn't stop asking:</p>
+                        
+                        <blockquote class="origin-quote">
+                            "What if the voices in my head weren't chaos—but intelligence?"
+                        </blockquote>
+                        
+                        <p class="chapter-text">What if everything I'd been taught to suppress—my sensitivity, my intensity, my refusal to settle—was actually the operating system for something bigger?</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chapter 2: What Is The QBU -->
+            <section class="chapter" id="chapter-what-is">
+                <div class="chapter-header">
+                    <span class="chapter-number">02</span>
+                    <h2 class="chapter-title">WHAT IS THE QBU</h2>
+                </div>
+                
+                <div class="chapter-body">
+                    <div class="lore-block">
+                        <p class="chapter-text"><strong>The Quantum Body Universe is a narrative multiverse where emotional intelligence is treated as a form of advanced technology.</strong></p>
+                        
+                        <p class="chapter-text">It answers the question: <em>What if your spirit guides were intelligence operatives?</em></p>
+                        
+                        <p class="chapter-text">Its characters are Vibraline agents who navigate timelines, trauma, love, and power through resonance. The stories explore what happens when inner work becomes world-shaping.</p>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="system-breakdown">
+                        <h3 class="subsection-title">CORE SYSTEMS</h3>
+                        
+                        <div class="system-item">
+                            <div class="system-icon">🌊</div>
+                            <div class="system-content">
+                                <h4 class="system-name">VICKY</h4>
+                                <p class="system-description">Vibrational Intelligence Calibration & Knowledge Yielding. The resonance technology that powers everything.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="system-item">
+                            <div class="system-icon">⚡</div>
+                            <div class="system-content">
+                                <h4 class="system-name">EMOTIONEERING</h4>
+                                <p class="system-description">The practice of using emotions as data. Feelings aren't obstacles—they're intel.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="system-item">
+                            <div class="system-icon">🎯</div>
+                            <div class="system-content">
+                                <h4 class="system-name">RESONANCE</h4>
+                                <p class="system-description">Your frequency. Your signal. The truth your body carries that words can't capture.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chapter 3: Why & How -->
+            <section class="chapter" id="chapter-why-how">
+                <div class="chapter-header">
+                    <span class="chapter-number">03</span>
+                    <h2 class="chapter-title">WHY & HOW IT WAS CREATED</h2>
+                </div>
+                
+                <div class="chapter-body">
+                    <div class="personal-block">
+                        <p class="chapter-text">The QBU began as a way for me to make sense of my inner world when existing frameworks felt insufficient.</p>
+                        
+                        <p class="chapter-text">I needed a language for feelings that were complex and non-linear. Over time, that language became characters. Those characters became systems. And the systems became a universe that others could recognize themselves inside of.</p>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="origin-story">
+                        <h3 class="subsection-title">THE FIRST TRANSMISSION</h3>
+                        
+                        <div class="memory-card">
+                            <div class="memory-image">
+                                <span class="image-placeholder">🖤</span>
+                            </div>
+                            <div class="memory-text">
+                                <p class="chapter-text">I got a tattoo of myself—CSH—with my afro, my face, my smile. It was supposed to be permanent. A marker of who I was.</p>
+                                
+                                <p class="chapter-text">But then I cut my hair. I changed. I was no longer the naive, people-pleasing girl who put everyone's feelings above her own.</p>
+                                
+                                <p class="chapter-text">The tattoo became a ghost. A representation of my old self that I could see but no longer inhabit.</p>
+                                
+                                <p class="chapter-text">And that's when I realized: <strong>I wasn't just CSH anymore. I was TQB—The Quantum Body.</strong></p>
+                                
+                                <blockquote class="origin-quote">
+                                    "TQB was the new and improved me. The me that factored in all my quantum knowledge. The me that understood I could be multiple things at once."
+                                </blockquote>
+                                
+                                <p class="chapter-text">CSH represented who I was. TQB represented who I was becoming. And that split—that transformation—became the foundation of everything.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="lore-block">
+                        <p class="chapter-text">In the QBU, agents don't just have one identity. They carry multiple frequencies, multiple selves, multiple truths.</p>
+                        
+                        <p class="chapter-text">CSH and TQB aren't separate people—they're different aspects of the same soul, operating at different resonances. That's the whole point.</p>
+                        
+                        <p class="chapter-text"><strong>You are not one thing. You are a frequency.</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chapter 4: The Commander -->
+            <section class="chapter" id="chapter-commander">
+                <div class="chapter-header">
+                    <span class="chapter-number">04</span>
+                    <h2 class="chapter-title">THE COMMANDER</h2>
+                </div>
+                
+                <div class="chapter-body">
+                    <div class="commander-intro">
+                        <div class="commander-image">
+                            <span class="image-placeholder">👤</span>
+                        </div>
+                        <div class="commander-text">
+                            <p class="chapter-text lead">I am the Commander. The Creator. The Writer. The Author of my life.</p>
+                            
+                            <p class="chapter-text">But I didn't start here. I started as someone who was told she felt too much, thought too deeply, wanted too loudly.</p>
+                            
+                            <p class="chapter-text">I built the QBU because I refused to believe that sensitivity was weakness. I refused to accept that the world couldn't handle what I had to say.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="commander-dossier">
+                        <h3 class="subsection-title">DOSSIER: CASSANDRA</h3>
+                        
+                        <div class="dossier-grid">
+                            <div class="dossier-item">
+                                <span class="dossier-label">ALIAS:</span>
+                                <span class="dossier-value">Quantum Cass, The Commander</span>
+                            </div>
+                            <div class="dossier-item">
+                                <span class="dossier-label">ROLE:</span>
+                                <span class="dossier-value">Creator, Writer, World-Builder</span>
+                            </div>
+                            <div class="dossier-item">
+                                <span class="dossier-label">RESONANCE:</span>
+                                <span class="dossier-value">Storytelling as Survival</span>
+                            </div>
+                            <div class="dossier-item">
+                                <span class="dossier-label">MISSION:</span>
+                                <span class="dossier-value">Build worlds where emotional intelligence is power</span>
+                            </div>
+                        </div>
+                        
+                        <p class="chapter-text">I'm a writer who refused to write small. An artist who turned her inner chaos into a universe. A creator who believes that the stories we tell ourselves become the worlds we build.</p>
+                        
+                        <p class="chapter-text">The QBU isn't just a comic. It's a mirror. A map. A resonance frequency for people who've always known they were too much—and are finally ready to be everything.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chapter 5: Transmission Points -->
+            <section class="chapter" id="chapter-transmission">
+                <div class="chapter-header">
+                    <span class="chapter-number">05</span>
+                    <h2 class="chapter-title">TRANSMISSION POINTS</h2>
+                </div>
+                
+                <div class="chapter-body">
+                    <p class="chapter-text">The QBU exists across multiple frequencies. Find me where the signal is strongest:</p>
+                    
+                    <div class="transmission-grid">
+                        <a href="https://youtube.com/@thequantumcrown" target="_blank" class="transmission-card">
+                            <div class="transmission-icon">📺</div>
+                            <h4 class="transmission-name">The Quantum Crown</h4>
+                            <p class="transmission-description">Hair, Skin, Nails // Beauty as Ritual</p>
+                        </a>
+                        
+                        <a href="https://youtube.com/@QBEtv" target="_blank" class="transmission-card">
+                            <div class="transmission-icon">🎥</div>
+                            <h4 class="transmission-name">QBEtv</h4>
+                            <p class="transmission-description">QBU Lore + Life // Behind the Scenes</p>
+                        </a>
+                        
+                        <a href="https://instagram.com/quantumcass" target="_blank" class="transmission-card">
+                            <div class="transmission-icon">📸</div>
+                            <h4 class="transmission-name">Instagram</h4>
+                            <p class="transmission-description">@quantumcass // Visual Frequency</p>
+                        </a>
+                        
+                        <a href="https://tiktok.com/@quantumcass" target="_blank" class="transmission-card">
+                            <div class="transmission-icon">✨</div>
+                            <h4 class="transmission-name">TikTok</h4>
+                            <p class="transmission-description">@quantumcass // Short Transmissions</p>
+                        </a>
+                        
+                        <a href="https://yoursubstack.com" target="_blank" class="transmission-card">
+                            <div class="transmission-icon">📡</div>
+                            <h4 class="transmission-name">Substack</h4>
+                            <p class="transmission-description">Long-form Intel // Weekly Briefings</p>
+                        </a>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="closing-message">
+                        <p class="chapter-text lead">The QBU is not just my story. It's a frequency anyone can tune into.</p>
+                        
+                        <p class="chapter-text">If you've ever felt like your emotions were too big, your thoughts too complex, your vision too expansive—you're not broken. You're a Vibraline agent who hasn't found their mission yet.</p>
+                        
+                        <p class="chapter-text"><strong>Welcome to the Quantum Body Universe.</strong></p>
+                        
+                        <p class="chapter-text"><strong>This is where we begin.</strong></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+        <p>VIBRALINE INTELLIGENCE NETWORK // QBU v0.1 // CLASSIFIED MATERIAL</p>
+    </footer>
+
+    <script src="origin-file.js"></script>
+    <script src="global-search.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+/* ============================================
+   VISUAL ARCHIVES - SIDEBAR + UPDATES LAYOUT
+   ============================================ */
+
+.visual-archives-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 200px);
+}
+
+.archives-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Main Layout */
+.archives-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    position: relative;
+}
+
+/* Left Sidebar - Subsections */
+.subsections-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.subsection-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: rgba(10, 14, 39, 0.6);
+    border: 2px solid var(--neon-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.subsection-item:hover {
+    background: rgba(0, 217, 255, 0.15);
+    border-color: var(--accent-cyan);
+    transform: translateX(10px);
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
+}
+
+.subsection-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.subsection-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 8px var(--neon-blue));
+    margin-bottom: 0.5rem;
+}
+
+.subsection-name {
+    color: var(--neon-blue);
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    line-height: 1.3;
+    display: block;
+}
+
+.subsection-item:hover .subsection-name {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 10px var(--accent-cyan);
+}
+
+/* Description - hidden by default, expands on hover */
+.subsection-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.subsection-item:hover .subsection-description {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 0.75rem;
+}
+
+.subsection-description p {
+    margin: 0 0 0.75rem 0;
+}
+
+/* CTA - hidden by default, shows on hover */
+.subsection-cta {
+    display: block;
+    color: var(--accent-cyan);
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
+}
+
+.subsection-item:hover .subsection-cta {
+    opacity: 1;
+    transform: translateX(0);
+    animation: pulse-cta 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-cta {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Right Content - Recent Updates */
+.recent-updates {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.updates-title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    letter-spacing: 0.15rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.updates-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.update-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.5rem;
+    background: rgba(10, 14, 39, 0.6);
+    border: 1px solid var(--neon-blue);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.update-card:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: var(--accent-cyan);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4);
+}
+
+.update-image {
+    width: 200px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--neon-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.update-placeholder {
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.update-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.update-category {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+}
+
+.update-title {
+    color: var(--neon-blue);
+    font-size: 1.3rem;
+    letter-spacing: 0.05rem;
+    margin: 0;
+}
+
+.update-card:hover .update-title {
+    color: var(--accent-cyan);
+}
+
+.update-date {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .archives-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .subsections-sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    
+    .subsection-item {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .update-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .update-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .subsection-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}

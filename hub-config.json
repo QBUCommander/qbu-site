@@ -1,0 +1,14 @@
+{
+    "systemStatus": {
+        "status": "ONLINE",
+        "message": "Currently: Building the QBU website // Energy level: Rising // Next update: New dossier coming soon",
+        "lastUpdate": "2026.02.03 // 15:47"
+    },
+    "substackUrl": "https://yoursubstack.com",
+    "recentFiles": [
+        { "date": "2026.02.03", "type": "DOSSIER", "label": "The Quantum Body — Agent Profile Added", "link": "dossiers.html?agent=tqb" },
+        { "date": "2026.02.03", "type": "DOSSIER", "label": "Captain Save a Haux — Agent Profile Added", "link": "dossiers.html?agent=csh" },
+        { "date": "2026.02.02", "type": "SYSTEM", "label": "Personnel Database Initialized", "link": "" },
+        { "date": "2026.02.01", "type": "NETWORK", "label": "Vibraline Hub Online", "link": "" }
+    ]
+}

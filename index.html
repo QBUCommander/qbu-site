@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBRALINE // Quantum Body Universe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="active">
+        <div class="scan-line"></div>
+        <div class="login-container">
+            <div class="logo-container">
+                <img src="Vibraline_Symbol.png" alt="Vibraline" class="vibraline-logo">
+            </div>
+            <h1 class="glitch-text" data-text="VIBRALINE">VIBRALINE</h1>
+            <p class="subtitle">QUANTUM BODY UNIVERSE // INTELLIGENCE NETWORK</p>
+            <div class="clearance-select">
+                <div class="input-group">
+                    <label for="clearance">SELECT CLEARANCE LEVEL</label>
+                    <select id="clearance" class="terminal-input">
+                        <option value="guest">GUEST // LIMITED ACCESS</option>
+                        <option value="observer">OBSERVER // EMAIL REQUIRED</option>
+                        <option value="initiate">INITIATE // PAID SUBSCRIPTION</option>
+                        <option value="vibraline">VIBRALINE // FULL ACCESS</option>
+                    </select>
+                </div>
+                <div class="input-group" id="email-input" style="display: none;">
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="email" id="email" class="terminal-input" placeholder="agent@vibraline.net">
+                </div>
+                <button id="enter-btn" class="enter-button">
+                    <span class="btn-text">ENTER HUB</span>
+                    <span class="btn-glitch">ENTER HUB</span>
+                </button>
+            </div>
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>SYSTEM ONLINE // ALL NETWORKS OPERATIONAL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Hub -->
+    <div id="main-hub">
+        <div class="scan-line"></div>
+        
+        <!-- Header -->
+        <header class="hub-header">
+            <div class="header-left">
+                <img src="Vibraline_Symbol.png" alt="Vibraline" class="logo-small">
+                <div class="header-text">
+                    <span class="header-title">THE QUANTUM BODY UNIVERSE</span>
+                    <span class="header-subtitle">VIBRALINE INTELLIGENCE NETWORK</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="clearance-badge" id="clearance-badge">GUEST</span>
+                <button id="logout-btn" class="logout-btn">LOGOUT</button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <a href="#hub" class="nav-link active">HUB</a>
+            <a href="origin-file.html" class="nav-link">ORIGIN FILE</a>
+            <a href="dossiers.html" class="nav-link">DOSSIERS</a>
+            <a href="transmissions.html" class="nav-link">TRANSMISSIONS</a>
+            <a href="visual-archives.html" class="nav-link">VISUAL ARCHIVES</a>
+            <a href="command-log.html" class="nav-link">COMMAND LOG</a>
+            <a href="zones.html" class="nav-link">ZONES</a>
+            <a href="physical-records.html" class="nav-link">PHYSICAL RECORDS</a>
+                <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D;</a>
+    </nav>
+    <div class="global-search-bar" id="global-search-bar" style="display:none;">
+        <div class="search-container">
+            <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
+            <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+        </div>
+        <div id="global-search-results" class="search-results"></div>
+    </div>
+
+        <!-- Main Content Area -->
+        <main class="hub-content">
+            <!-- System Status -->
+            <section class="creator-status">
+                <h2 class="section-title">
+                    <span class="title-bracket">[</span>
+                    SYSTEM STATUS
+                    <span class="title-bracket">]</span>
+                </h2>
+                <div class="status-container">
+                    <div class="status-indicator">
+                        <span class="status-pulse"></span>
+                        <span class="status-label">CREATOR STATUS: ONLINE</span>
+                    </div>
+                    <div class="status-message" id="creator-status">
+                        Currently: Building the QBU website // Energy level: Rising // Next update: New dossier coming soon
+                    </div>
+                    <div class="status-meta">
+                        <span class="status-timestamp">LAST UPDATE: 2026.02.03 // 15:47</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Substack Notes Feed -->
+            <section class="system-feed">
+                <h2 class="section-title">
+                    <span class="title-bracket">[</span>
+                    SYSTEM FEED
+                    <span class="title-bracket">]</span>
+                </h2>
+                <div class="feed-container" id="feed-container">
+                    <!-- Substack Notes will be embedded here -->
+                    <!-- For now showing placeholder structure -->
+                    <div class="substack-note">
+                        <span class="note-timestamp">2026.02.03 // 14:32</span>
+                        <p class="note-content">Currently: Building the QBU website // Energy level: Rising // Next update: New dossier coming soon</p>
+                        <div class="note-actions">
+                            <button class="note-action">♥ï¸ Like</button>
+                            <button class="note-action">🔄 Restack</button>
+                        </div>
+                    </div>
+                    <div class="substack-note">
+                        <span class="note-timestamp">2026.02.02 // 09:15</span>
+                        <p class="note-content">The Whisper tried to tell me I couldn't do this. But here we are. 🪞</p>
+                        <div class="note-actions">
+                            <button class="note-action">♥ï¸ Like</button>
+                            <button class="note-action">🔄 Restack</button>
+                        </div>
+                    </div>
+                    <p class="feed-note">⚡ Connect your Substack to see live notes feed</p>
+                </div>
+            </section>
+
+            <!-- Featured Dossiers -->
+            <section class="featured-dossiers">
+                <h2 class="section-title">
+                    <span class="title-bracket">[</span>
+                    PRIORITY AGENTS
+                    <span class="title-bracket">]</span>
+                </h2>
+                <div class="dossier-grid">
+                    <a href="dossiers.html?agent=csh" class="dossier-card" data-agent="csh">
+                        <div class="card-header">
+                            <span class="agent-code">AGENT // CSH</span>
+                            <span class="clearance-level">CLEARANCE: GUEST+</span>
+                        </div>
+                        <div class="card-image-placeholder">
+                            <div class="image-scan"></div>
+                            <span class="image-text">VISUAL DATA PENDING</span>
+                        </div>
+                        <h3 class="agent-name">CAPTAIN SAVE A HAUX</h3>
+                        <p class="agent-preview">Primary operative specializing in temporal rescue operations and dimensional navigation...</p>
+                        <span class="view-dossier-btn">ACCESS FULL DOSSIER →</span>
+                    </a>
+
+                    <a href="dossiers.html?agent=tqb" class="dossier-card" data-agent="tqb">
+                        <div class="card-header">
+                            <span class="agent-code">AGENT // TQB</span>
+                            <span class="clearance-level">CLEARANCE: GUEST+</span>
+                        </div>
+                        <div class="card-image-placeholder">
+                            <div class="image-scan"></div>
+                            <span class="image-text">VISUAL DATA PENDING</span>
+                        </div>
+                        <h3 class="agent-name">THE QUANTUM BODY</h3>
+                        <p class="agent-preview">Central intelligence unit bridging consciousness streams across multiple dimensional frequencies...</p>
+                        <span class="view-dossier-btn">ACCESS FULL DOSSIER →</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Last Files Added -->
+            <section class="last-files-added">
+                <h2 class="section-title">
+                    <span class="title-bracket">[</span>
+                    LAST FILES ADDED
+                    <span class="title-bracket">]</span>
+                </h2>
+                <div class="files-grid" id="recent-files">
+                    <!-- Recent files will be populated dynamically -->
+                    <a href="dossiers.html?agent=tqb" class="file-card">
+                        <span class="file-date">2026.02.03</span>
+                        <span class="file-type">DOSSIER</span>
+                        <span class="file-link">The Quantum Body - Agent Profile Added</span>
+                    </a>
+                    <a href="dossiers.html?agent=csh" class="file-card">
+                        <span class="file-date">2026.02.03</span>
+                        <span class="file-type">DOSSIER</span>
+                        <span class="file-link">Captain Save a Haux - Agent Profile Added</span>
+                    </a>
+                    <div class="file-card non-clickable">
+                        <span class="file-date">2026.02.02</span>
+                        <span class="file-type">SYSTEM</span>
+                        <span class="file-link">Personnel Database Initialized</span>
+                    </div>
+                    <div class="file-card non-clickable">
+                        <span class="file-date">2026.02.01</span>
+                        <span class="file-type">NETWORK</span>
+                        <span class="file-link">Vibraline Hub Online</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="hub-footer">
+            <p>VIBRALINE INTELLIGENCE NETWORK // QBU v0.1 // CLASSIFIED MATERIAL</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="global-search.js"></script>
+</body>
+</html>

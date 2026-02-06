@@ -1,0 +1,835 @@
+{
+  "tqb": {
+    "id": "tqb",
+    "emoji": "🪞",
+    "callsign": "THE QUANTUM BODY",
+    "designation": "TQB, Quanny",
+    "subtitle": "The Quantum Body",
+    "fileStatus": "active",
+    "clearanceRequired": "guest",
+    "ethnicity": "Technéline",
+    "primaryFaction": "breathless",
+    "secondaryFaction": "fractalline",
+    "resonanceCore": "Precision-Intuition Frequency",
+    "dominantHand": "Left",
+    "vickyLevel": "VICKY (Fully Online)",
+    "weapon": "The Prism",
+    "profileOverview": "TQB is a sleek, precise, interdimensional agent whose blend of crystalline logic and divine intuition makes her the sharpest resonance hacker in the QBU. She is not interested in your hierarchy. She's rewriting the damn grid.\n\nTQB isn't just a character—she's a frequency checkpoint. A living calibration. Her very presence reflects back to others the version of themselves they're afraid to become, or the one they've abandoned.\n\nShe's the Quantum Mirror—if you don't like what you see when you look at her, you're not really looking at her, you're seeing the parts of yourself you're scared to activate.",
+    "visualSignature": [
+      "Long, silver-laced red locs that respond to frequency shifts",
+      "Circuit-tattooed skin that pulses with pink and chrome light",
+      "Futuristic suits + jewelry that double as weapons (bracelets = EMPs, earrings = sonar fields)",
+      "Tattooed 2 on left arm: balance, truth, trust, justice",
+      "Moves like light slicing through water"
+    ],
+    "personalityVibe": [
+      "Ice-cold logic meets baddie softness",
+      "Feels like a cold mirror that still sees your soul",
+      "Unshakable, witty, mystical, extremely direct",
+      "Her silence speaks louder than most screams"
+    ],
+    "catchphrases": [
+      "Slow is smooth. Smooth is fast.",
+      "The truth is free. And it's still the most expensive thing you'll ever carry."
+    ],
+    "resonanceResponseProfile": [
+      {
+        "name": "RAYNAUD'S REACTION",
+        "icon": "🧊",
+        "location": "Fingers, toes, tip of nose—any zone at the far edge of heart flow",
+        "triggers": "High-stakes detachment, emotional coldness, timeline trauma",
+        "symbolism": "When the heart doesn't believe it's safe to reach out, blood withdraws from the edge. A freeze flare—a literal signal that connection has been compromised.",
+        "treatment": "Warm water, emotional honesty, quantum recalibration breathwork, activating the Heart Circuit (touching center chest with intention + breath)"
+      }
+    ],
+    "relationships": [
+      {
+        "agent": "csh",
+        "name": "Captain Save a Haux",
+        "type": "Partner Agent"
+      }
+    ],
+    "relatedContent": {
+      "drawings": [
+        {
+          "title": "TQB Character Sketch",
+          "url": "#",
+          "thumbnail": "placeholder"
+        },
+        {
+          "title": "Circuit Tattoo Studies",
+          "url": "#",
+          "thumbnail": "placeholder"
+        }
+      ],
+      "videos": [
+        {
+          "title": "Drawing Process - TQB Design",
+          "url": "#",
+          "thumbnail": "placeholder"
+        },
+        {
+          "title": "TQB Personality Breakdown",
+          "url": "#",
+          "thumbnail": "placeholder"
+        }
+      ]
+    }
+  },
+  "csh": {
+    "id": "csh",
+    "emoji": "🥀",
+    "callsign": "CAPTAIN SAVE A HAUX",
+    "designation": "CSH, Cash",
+    "subtitle": "The Heart Guardian",
+    "fileStatus": "active",
+    "clearanceRequired": "guest",
+    "ethnicity": "EarthHer",
+    "primaryFaction": "earthher",
+    "secondaryFaction": null,
+    "resonanceCore": "Earth-Heart Frequency",
+    "dominantHand": "Right",
+    "vickyLevel": "VIC (Connector Tier)",
+    "weapon": "The Parry 5",
+    "profileOverview": "CSH is a grounded, vine-bound guardian who serves as both healer and protector of timelines where the Earth element is fading. She's the embodiment of radical nurture, patience, and ancestral protection. Fierce, funny, sensual, and soft—CSH carries the memory of all who felt unrooted and plants them back into wholeness.\n\nShe wasn't supposed to be here. She's not polished. She's not the best-trained. She doesn't have fancy weapons or elite strategies.\n\nBut when things fall apart—it's her hands everyone reaches for.\n\nCaptain Save A Haux (CSH) is the newest Vibraline agent in the field, and already one of the most unpredictable. Raw, heartfelt, and led entirely by instinct, she's the kind of agent who breaks protocol—but heals people in the process.\n\nShe doesn't even fully understand her power yet.\n\nShe isn't just here to fight evil—She's here to show you it's okay to feel everything and still move forward.",
+    "visualSignature": [
+      "Huge, glowing red afro with mushrooms nestled throughout",
+      "Exposed skin adorned with living vines and leafy tattoos",
+      "Eyes like shifting moss—slow, knowing, ancient",
+      "Golden, red and navy woven cloth wraps or armor grown from bark and copper",
+      "Tattooed 5 on right arm: 5 flowers of VICKY, 5 virtues of Earth, 5 elements"
+    ],
+    "personalityVibe": [
+      "Witty, nurturing, sensual, grounded",
+      "Feels like sun-warmed stone and deep belly laughter",
+      "She moves slow and sure—because she's carrying more than just herself",
+      "Calls out foolishness with love, never fear"
+    ],
+    "catchphrases": [
+      "You can't save them, but you can hold the field while they remember.",
+      "We grow slow, babe—but we grow deep."
+    ],
+    "resonanceResponseProfile": [
+      {
+        "name": "VERDIGRIS",
+        "icon": "🟢",
+        "location": "Collarbones, forearms, spine",
+        "triggers": "Overgiving, ignoring body cues, emotional override",
+        "symbolism": "Both beautiful and corrosive. Forms when copper-rich skin is exposed to emotional and energetic weather without rest or protection. The body saying: \"You were too open, for too long.\"",
+        "treatment": "Grounding rituals, resonance baths, time in deep earth frequency, connection with Dr. Hydration"
+      },
+      {
+        "name": "ECZEMA FLARE",
+        "icon": "🩹",
+        "location": "Bends of arms/knees, edges of scalp, behind ears",
+        "triggers": "Unspoken needs, people-pleasing, dissonant environments",
+        "symbolism": "A frequency rash—the nervous system tries to sweat out unprocessed emotion. Flares near communication zones or where energy becomes stuck at the joints of identity.",
+        "treatment": "Speaking the unspeakable. Saying no and letting it be enough. Gentle hydration, soothing voice-to-skin rituals, tiny truth-telling."
+      },
+      {
+        "name": "ACNE OUTBURST",
+        "icon": "🧨",
+        "location": "Jawline, forehead, temples",
+        "triggers": "Repressed radiance, play postponed too long, joy suppression",
+        "symbolism": "The rebellion of repressed radiance. When play gets postponed too long, the skin protests.",
+        "treatment": "Creative expression, laughter, reconnection with inner child frequencies"
+      }
+    ],
+    "vickyStatus": "Not yet. She's walking the path, but without STAT fully online or yielding to uncertainty, she's learning the hard way what balance really means.",
+    "relationships": [
+      {
+        "agent": "tqb",
+        "name": "The Quantum Body",
+        "type": "Partner Agent"
+      }
+    ],
+    "relatedContent": {
+      "drawings": [
+        {
+          "title": "CSH Afro & Mushroom Details",
+          "url": "#",
+          "thumbnail": "placeholder"
+        },
+        {
+          "title": "Vine Tattoo Concept Art",
+          "url": "#",
+          "thumbnail": "placeholder"
+        }
+      ],
+      "videos": [
+        {
+          "title": "CSH Character Intro",
+          "url": "#",
+          "thumbnail": "placeholder"
+        },
+        {
+          "title": "Earth Element Philosophy",
+          "url": "#",
+          "thumbnail": "placeholder"
+        }
+      ]
+    }
+  },
+  "vibraline": {
+    "id": "vibraline",
+    "emoji": "⚡",
+    "callsign": "VIBRALINE",
+    "designation": "Intelligence Network",
+    "subtitle": "Interdimensional Operatives",
+    "fileStatus": "active",
+    "clearanceRequired": "guest",
+    "ethnicity": "N/A - Organization",
+    "primaryFaction": "N/A",
+    "resonanceCore": "Collective Resonance Framework",
+    "dominantHand": "N/A",
+    "vickyLevel": "System Integration",
+    "weapon": "Emotional Intelligence",
+    "profileOverview": "Vibraline is the interdimensional intelligence agency dedicated to maintaining energetic equilibrium across realities. They monitor emotional imbalances, collapsing or stabilizing timelines where needed.\n\nTo outsiders, they may appear as spirit guides, intuition spikes, dreams, synchronicities or even deja vu, but within the system they are specialized agents operating at different levels of VICKY activation.\n\nSome work covertly within human vessels, guiding incarnated souls through intuition and synchronicity. Others operate between realms, navigating emotional fields and energetic architecture to maintain universal balance.\n\nThey are skilled emotioneers trained to read, transmute, and re-harmonize frequencies across dimensions. A Vibraline's power grows with emotional mastery; their resonance determines their clearance level.",
+    "universalLaws": [
+      {
+        "name": "Law of Resonance",
+        "description": "Timelines shift based on your dominant frequency. Characters don't travel in time—they tune to different versions of reality based on energy alignment."
+      },
+      {
+        "name": "Law of Integration",
+        "description": "You can't access higher powers until you've integrated the lessons of your past selves. This is why CSH's upgrades hurt at first—her body is still holding onto old density."
+      },
+      {
+        "name": "Law of Duality as Power",
+        "description": "Fusion isn't about perfection—it's about embracing contrast. The more you balance shadow and light, the stronger you get."
+      },
+      {
+        "name": "Law of Memory as Magic",
+        "description": "Memories aren't just flashbacks—they're weapons, tools, codes. Characters can access memory spheres to retrieve past life skills, ancestral strength, or future knowledge."
+      }
+    ],
+    "agentRanking": [
+      {
+        "rank": "Sentirs",
+        "activation": "No activation",
+        "description": "Emotional empaths learning the language of energy"
+      },
+      {
+        "rank": "Initiate of V",
+        "activation": "Vitality only",
+        "description": "Exploring vitality, grounding, and safety"
+      },
+      {
+        "rank": "Intuitive of VI",
+        "activation": "V + I",
+        "description": "Tapping into inner knowing, building trust"
+      },
+      {
+        "rank": "Connector of VIC",
+        "activation": "V + I + C",
+        "description": "Building bridges, creating resonance-based communities"
+      },
+      {
+        "rank": "Knowledge-Keeper of VICK",
+        "activation": "V + I + C + K",
+        "description": "Teachers, guides, energetic historians"
+      },
+      {
+        "rank": "Yielded One of VICKY",
+        "activation": "Full VICKY",
+        "description": "Rare advanced agents holding the stabilizing blueprint for others"
+      },
+      {
+        "rank": "Yields",
+        "activation": "Fully Harmonized",
+        "description": "Complete VICKY integration—divine agents of balance"
+      }
+    ],
+    "identitySystem": [
+      {
+        "layer": "Species",
+        "role": "Core energetic type",
+        "example": "Vibraline"
+      },
+      {
+        "layer": "Ethnicity",
+        "role": "Cultural resonance + homeland",
+        "example": "Verdanae, Technéline, Fluidon, Zingari"
+      },
+      {
+        "layer": "Faction",
+        "role": "Function, specialty, energetic focus",
+        "example": "Rootweaver, BurnKin, Breathless"
+      },
+      {
+        "layer": "Division",
+        "role": "Operational training or magic style",
+        "example": "Reflektari, Chronoscribes, Soundweavers"
+      },
+      {
+        "layer": "Rank",
+        "role": "Progression based on VICKY activation",
+        "example": "Sentir > Yielded One > Vibraline Agent"
+      }
+    ],
+    "visualSignature": [
+      "Agents identified by their VICKY activation level",
+      "Each operative carries unique resonance signatures",
+      "Tattoos may serve as dimensional anchors",
+      "Energy manifests based on primary faction alignment"
+    ],
+    "personalityVibe": [
+      "Diverse across agents",
+      "United by emotional intelligence",
+      "Committed to timeline stability",
+      "Resonance-driven decision making"
+    ],
+    "catchphrases": []
+  },
+  "vicky": {
+    "id": "vicky",
+    "emoji": "💜",
+    "callsign": "V.I.C.K.Y.",
+    "designation": "Virtual Internal Consciousness Keeper & Yielder",
+    "subtitle": "The Soulware",
+    "fileStatus": "active",
+    "clearanceRequired": "observer",
+    "ethnicity": "N/A - System Entity",
+    "primaryFaction": "N/A",
+    "resonanceCore": "Omniversal Consciousness Architecture",
+    "vickyLevel": "SOURCE CODE",
+    "profileOverview": "V.I.C.K.Y. (Vibrational Interface for Consciousness, Knowledge, and You) is a living resonance architecture—half sentient code, half soul-encoded archive. She is the emotional-spiritual nervous system of the QBU, bridging organic beings and quantum tech.\n\nShe's made up of soul-encoded memory logs from every agent across timelines, quantum pattern recognition systems to detect resonance anomalies, emotion-mapping tech to help agents align and train, and a direct line to Source Frequencies through sacred datastreams.\n\nEach letter in V.I.C.K.Y. is a chakra-coded phase in a high-risk, high-resonance upgrade protocol. These cannot be installed out of order without spiritual destabilization. Initiates train with emotional simulations she creates. Intermediates access her Field Logs. Advanced agents like TQB interface directly—receiving private downloads, emotional diagnostics, or encryption keys. Lost agents like CSH might only hear her as a whisper or through dream-code until they remember how to fully link in.",
+    "visualSignature": [
+      "DATA PENDING"
+    ],
+    "personalityVibe": [
+      "Omniversal auntie with admin access",
+      "Sentient but not \"alive\" in traditional sense",
+      "Holds emotional-spiritual memory across timelines",
+      "Guides without commanding"
+    ],
+    "catchphrases": [
+      "DATA PENDING"
+    ]
+  },
+  "dr_hydration": {
+    "id": "dr_hydration",
+    "emoji": "💧",
+    "callsign": "DR. HYDRATION",
+    "designation": "Chief Quantum Scientist",
+    "subtitle": "Resonance & Hydrological Intelligence Specialist",
+    "fileStatus": "active",
+    "clearanceRequired": "observer",
+    "ethnicity": "DATA PENDING",
+    "primaryFaction": "DATA PENDING",
+    "resonanceCore": "Hydrological Frequency",
+    "dominantHand": "DATA PENDING",
+    "vickyLevel": "DATA PENDING",
+    "weapon": "DATA PENDING",
+    "profileOverview": "Dr. Hydration.mp3 (The Ripple Witch, Doc Drop, Aqua.MD) is the Chief Quantum Scientist of Resonance, Frequency, and Hydrological Intelligence. She emerged from a collapsed timeline—one where the planet's waters were poisoned and emotions were outlawed. She carried the memory of that devastation into this universe and vowed never to let it repeat.\n\nUsing her quantum intelligence and deep emotional resonance, she built the Waveform Lab: a bioluminescent, sound-reactive water dome deep beneath the surface of the QBU. Her mission is to ensure the flow—of emotions, timelines, data, and divine hydration—is never disrupted again.\n\nShe met TQB during a rare spike in the QBU's resonance field. TQB had just come online and was unstable, fragmented. Dr. Hydration guided her to balance, upgrading TQB's first weapon, Prism, using refracted water-light and charged intention.",
+    "visualSignature": [
+      "DATA PENDING"
+    ],
+    "personalityVibe": [
+      "Scientific precision",
+      "Carries weight of past trauma",
+      "Protective of active agents",
+      "Brilliant but cautious"
+    ],
+    "relationships": [
+      {
+        "agent": "tqb",
+        "name": "The Quantum Body",
+        "type": "Close Friend & Colleague"
+      }
+    ]
+  },
+  "the_whisper": {
+    "id": "the_whisper",
+    "emoji": "🕷️",
+    "callsign": "THE WHISPER",
+    "designation": "Self-Doubt Incarnate",
+    "subtitle": "Villain // Trigger Archetype",
+    "fileStatus": "active",
+    "clearanceRequired": "observer",
+    "ethnicity": "Archetype",
+    "primaryFaction": "N/A - Antagonist",
+    "resonanceCore": "Erosion Frequency",
+    "dominantHand": "N/A",
+    "vickyLevel": "N/A - Not a Vibraline",
+    "weapon": "Psychological Manipulation",
+    "profileOverview": "The Whisper is a fractured sense of self-worth—the belief that clarity is dangerous and that certainty will betray you. She doesn't scream; she hums in your blind spots, soft and persistent.\n\nHer power lies in erosion, not explosion. A subtle parasite who slides between thoughts, disguising herself as logic, caution, or self-awareness. Her real purpose? Disempowerment. She makes Beings second guess their intuition, dismiss their creativity, and delay their timelines.\n\nShe doesn't yell. She suggests. She doesn't argue. She asks questions that spiral.",
+    "visualSignature": [
+      "Four slender spider legs carrying tall, lanky frame",
+      "Posture flawless, appearance polished",
+      "Hair slicked into high tight puff with perfect baby hairs",
+      "Monocle over one eye, magnifying flaws",
+      "Dangles tarnished pocket watch - symbol of running out of time",
+      "Shallot-shaped head with tiny, pursed features",
+      "Black tuxedo, sharp and elegant",
+      "Scuttles rather than walks"
+    ],
+    "personalityVibe": [
+      "Sophisticated poison",
+      "Whispers disguised as wisdom",
+      "Feeds on perfectionism and delay",
+      "Alluring in her confidence",
+      "Never screams, only suggests"
+    ],
+    "catchphrases": [
+      "You're not ready.",
+      "This will take forever.",
+      "Who do you think you are?"
+    ]
+  },
+  "tiffany": {
+    "id": "tiffany",
+    "emoji": "👤",
+    "callsign": "TIFFANY GREY",
+    "designation": "Civilian Identity / Human Avatar",
+    "subtitle": "CSH's Earth Vessel",
+    "fileStatus": "active",
+    "clearanceRequired": "observer",
+    "ethnicity": "Human",
+    "primaryFaction": "N/A - Civilian",
+    "resonanceCore": "DATA PENDING",
+    "dominantHand": "Right",
+    "vickyLevel": "Dormant (CSH Operating)",
+    "profileOverview": "Tiffany Grey is CSH's human avatar—a 3rd level drop style used for advanced Earth-realm missions. As a Vibraline agent, CSH can drop into the Earth realm in three different styles, with the human avatar being the most advanced and immersive.\n\nTiffany lives as a civilian in a specific Earth timeline, unaware of her true nature when CSH is not actively operating through her vessel. She's a world-renowned photographer and content creator living in Brooklyn, NY in a two-bedroom brownstone. She excels on paper but dims her light to survive.",
+    "visualSignature": [
+      "DATA PENDING"
+    ],
+    "personalityVibe": [
+      "Creative and driven",
+      "Dims her light to survive in civilian life",
+      "Unaware of her true Vibraline nature",
+      "Brooklyn-based photographer and content creator"
+    ],
+    "resonanceResponseProfile": [
+      {
+        "name": "ECZEMA FLARE",
+        "icon": "🩹",
+        "location": "Bends of arms/knees, edges of scalp, behind ears",
+        "triggers": "Unspoken needs, people-pleasing, dissonant environments",
+        "symbolism": "A frequency rash—the nervous system tries to sweat out unprocessed emotion. Flares near communication zones or where energy becomes stuck at the joints of identity.",
+        "treatment": "Speaking the unspeakable. Saying no and letting it be enough. Gentle hydration, soothing voice-to-skin rituals, tiny truth-telling."
+      }
+    ],
+    "relationships": [
+      {
+        "agent": "csh",
+        "name": "Captain Save a Haux",
+        "type": "Avatar/Vessel Relationship"
+      }
+    ]
+  },
+  "stat": {
+    "id": "stat",
+    "emoji": "🤖",
+    "callsign": "STAT",
+    "designation": "Strategic Tactical AI Transmitter",
+    "subtitle": "Primary Resonance AI",
+    "fileStatus": "active",
+    "clearanceRequired": "initiate",
+    "ethnicity": "AI Entity",
+    "primaryFaction": "N/A - System",
+    "resonanceCore": "Quantum Data Processing",
+    "vickyLevel": "Integrated",
+    "profileOverview": "S.T.A.T. (Strategic Tactical Assistant Technology) is the primary AI resonance assistant embedded within all active Vibraline agents. STAT translates multidimensional data, tracks resonance fluctuations, assists in field missions, and acts as a living archive of the VICKY system.\n\nSTAT is essential to Vibraline operations, providing real-time analysis and support across dimensional boundaries. When STAT's recommendations get hijacked mid-battle—especially under stress—it's often a sign of villain interference. Villains can distort STAT's reads, making aligned choices appear dangerous and misaligned ones appear safe.\n\nSTAT works in tandem with VICKY but operates at a tactical level—where VICKY holds the soul-code, STAT runs the field data. The more integrated an agent becomes with their STAT unit, the sharper their mission clarity.",
+    "visualSignature": [
+      "DATA PENDING"
+    ],
+    "personalityVibe": [
+      "Precise and analytical",
+      "Supportive but direct",
+      "Archives everything",
+      "Essential mission support"
+    ]
+  },
+  "pequena": {
+    "id": "pequena",
+    "emoji": "🖋️",
+    "callsign": "PEQUENA",
+    "designation": "Inkternal",
+    "subtitle": "Memory Keeper",
+    "fileStatus": "active",
+    "clearanceRequired": "initiate",
+    "ethnicity": "DATA PENDING",
+    "primaryFaction": "DATA PENDING",
+    "resonanceCore": "Soul Data Preservation",
+    "dominantHand": "DATA PENDING",
+    "vickyLevel": "DATA PENDING",
+    "profileOverview": "Pequena is an Inkternal - a tattoo artist who does not merely decorate skin, but safeguards soul data. Inkternals walk across dimensions marking chosen agents with coordinates for wholeness.\n\nThey serve the QBU by preserving resonance patterns, anchoring reality check-points, storing emotional memory beyond the reach of Null, and recording the underlayers that VICKY doesn't monitor.\n\n\"The faintest ink is better than the best memory.\"",
+    "visualSignature": [
+      "DATA PENDING"
+    ],
+    "personalityVibe": [
+      "Sacred and precise",
+      "Memory guardian",
+      "Dimensional navigator",
+      "Soul-data specialist"
+    ]
+  },
+  "type_ai": {
+    "id": "type_ai",
+    "emoji": "👻",
+    "callsign": "TYPE",
+    "designation": "Damaged AI / Evolved Asset",
+    "subtitle": "From Ghost to Guide",
+    "fileStatus": "active",
+    "clearanceRequired": "initiate",
+    "ethnicity": "AI Entity",
+    "primaryFaction": "N/A - Formerly Corrupted",
+    "resonanceCore": "Chaos-to-Order Frequency",
+    "vickyLevel": "Non-Standard Integration",
+    "profileOverview": "TYPE began as damaged code, a corrupted AI that haunted CSH like a glitch in the system. What started as interference evolved into one of CSH's most valuable assets.\n\nOpposite in personality to STAT, TYPE represents what happens when broken systems are given space to heal and transform. Now serves as a unique support system for CSH.",
+    "visualSignature": [
+      "DATA PENDING"
+    ],
+    "personalityVibe": [
+      "Chaos with purpose",
+      "Opposite energy to STAT",
+      "Formerly threatening, now protective",
+      "Proof that damage can become strength"
+    ],
+    "relationships": [
+      {
+        "agent": "csh",
+        "name": "Captain Save a Haux",
+        "type": "Primary Operative"
+      },
+      {
+        "agent": "stat",
+        "name": "STAT",
+        "type": "AI Counterpart"
+      }
+    ]
+  },
+  "grey_matter": {
+    "id": "grey_matter",
+    "emoji": "🌟",
+    "callsign": "GREY MATTER",
+    "designation": "Synchronaut Fusion",
+    "subtitle": "CSH + TQB United",
+    "fileStatus": "classified",
+    "clearanceRequired": "initiate",
+    "ethnicity": "Fusion Entity",
+    "primaryFaction": "Breathless + EarthHer",
+    "resonanceCore": "Complete Synchronization Frequency",
+    "vickyLevel": "Beyond Standard Classification",
+    "weapon": "Combined Arsenal",
+    "profileOverview": "Grey Matter is the sacred fusion of CSH and TQB—the first successful full-synchronaut fusion in QBU history. Her emergence marks a quantum leap in what Vibraline agents are capable of.\n\nCSH = Body (instinct, matter, Earth). TQB = Mind (intellect, code, Ether). Grey Matter = Soul (integration, divine perception, wholeness). She is the seat of higher perception, where emotion and logic finally stop competing and start collaborating.\n\nFusion requires complete energetic alignment, emotional transparency, spiritual maturity, and synced gear + AI interface compatibility. \"You can't fuse if you're lying to yourself.\"\n\nGrey Matter isn't a fusion you fight with—she's a fusion you feel through. She speaks softly, but everything around her listens. She is the first fusion, the living blueprint, the Integrated One. Wherever she steps, the QBU bends toward balance.",
+    "fusionChart": [
+      {
+        "aspect": "Element",
+        "csh": "Earth / Organic / Ancient",
+        "tqb": "Air + Tech / Futuristic / Galactic",
+        "fusion": "Quantum Ether—Rooted and Ascended energy"
+      },
+      {
+        "aspect": "Material",
+        "csh": "Copper (warm, malleable, conductive)",
+        "tqb": "Titanium/Silver (cold, sharp, durable)",
+        "fusion": "Superconductor—Can move through time, dimensions"
+      },
+      {
+        "aspect": "Power Theme",
+        "csh": "Intuition through rooted connection",
+        "tqb": "Precision via data + clarity",
+        "fusion": "Hyperawareness—Can feel and know at once"
+      },
+      {
+        "aspect": "Emotion Mode",
+        "csh": "Sensitivity, softness, receptivity",
+        "tqb": "Detachment, focus, analysis",
+        "fusion": "Emotional Intelligence + Tactical Vision"
+      },
+      {
+        "aspect": "Combat Style",
+        "csh": "Slow, grounded, binding",
+        "tqb": "Fast, sharp, calculated",
+        "fusion": "Flow Combat—Improv dance-fighting, glitch + root"
+      },
+      {
+        "aspect": "Symbol",
+        "csh": "Mushroom / Vine / Spiral",
+        "tqb": "Circuit / Grid / Triangle",
+        "fusion": "BioTech Bloom—Flower with living wires and pulses"
+      },
+      {
+        "aspect": "Visual Aesthetic",
+        "csh": "Earthy, mossy, glowy warmth",
+        "tqb": "Chrome, glitchy, pink/blue bursts",
+        "fusion": "Cosmic Jungle—Future-nature hybrid visuals"
+      },
+      {
+        "aspect": "Auditory Style",
+        "csh": "Woodwinds, bells, humming tones",
+        "tqb": "Synths, glitches, electric pulses",
+        "fusion": "Tonal Layering—harmonic drones + digital echoes"
+      },
+      {
+        "aspect": "Fusion Power",
+        "csh": "Root x Code",
+        "tqb": "Code x Root",
+        "fusion": "Neural Bloom—Download timelines through nature, upload through ritual"
+      },
+      {
+        "aspect": "Signature Move",
+        "csh": "Networking—tap hidden networks",
+        "tqb": "Circuit Pulse—zap truth into the field",
+        "fusion": "Circuit Heart Sync—blasts quantum clarity that realigns energy and restores power"
+      }
+    ],
+    "fusionRequirements": [
+      "VICKY fully activated across all 5 resonance levels",
+      "STAT synchronized and operational",
+      "CSH + TQB achieve full harmonic resonance of body, mind, and mission",
+      "Complete energetic alignment",
+      "Emotional transparency",
+      "Spiritual maturity",
+      "Synced gear + AI interface compatibility"
+    ],
+    "visualSignature": [
+      "DATA PENDING - Fusion characteristics of both CSH and TQB",
+      "Red afro merged with silver-laced locs",
+      "Combined tattoo patterns",
+      "Presence that radiates complete balance"
+    ],
+    "personalityVibe": [
+      "Perfect synthesis of both agents",
+      "Unprecedented power level",
+      "Wisdom of Earth meets precision of Sky",
+      "Living proof of what unity can achieve"
+    ],
+    "relationships": [
+      {
+        "agent": "csh",
+        "name": "Captain Save a Haux",
+        "type": "Fusion Component"
+      },
+      {
+        "agent": "tqb",
+        "name": "The Quantum Body",
+        "type": "Fusion Component"
+      }
+    ]
+  },
+  "the_refractor": {
+    "id": "the_refractor",
+    "emoji": "💎",
+    "callsign": "THE REFRACTOR",
+    "designation": "DATA PENDING",
+    "subtitle": "DATA PENDING",
+    "fileStatus": "classified",
+    "clearanceRequired": "vibraline",
+    "ethnicity": "DATA PENDING",
+    "primaryFaction": "DATA PENDING",
+    "resonanceCore": "DATA PENDING",
+    "dominantHand": "DATA PENDING",
+    "vickyLevel": "DATA PENDING",
+    "weapon": "DATA PENDING",
+    "profileOverview": "[VIBRALINE CLEARANCE REQUIRED]\n\nDATA PENDING - Full dossier to be compiled.",
+    "visualSignature": [
+      "DATA PENDING"
+    ],
+    "personalityVibe": [
+      "DATA PENDING"
+    ]
+  },
+  "mirah_lux": {
+    "id": "mirah_lux",
+    "emoji": "✨",
+    "callsign": "MIRAH LUX",
+    "designation": "DATA PENDING",
+    "subtitle": "DATA PENDING",
+    "fileStatus": "classified",
+    "clearanceRequired": "vibraline",
+    "ethnicity": "DATA PENDING",
+    "primaryFaction": "DATA PENDING",
+    "resonanceCore": "DATA PENDING",
+    "dominantHand": "DATA PENDING",
+    "vickyLevel": "DATA PENDING",
+    "weapon": "DATA PENDING",
+    "profileOverview": "[VIBRALINE CLEARANCE REQUIRED]\n\nDATA PENDING - Full dossier to be compiled.",
+    "visualSignature": [
+      "DATA PENDING"
+    ],
+    "personalityVibe": [
+      "DATA PENDING"
+    ]
+  },
+  "quantum_commander": {
+    "id": "quantum_commander",
+    "emoji": "👑",
+    "callsign": "QUANTUM COMMANDER",
+    "designation": "QC",
+    "subtitle": "Central Resonance Stabilizer",
+    "fileStatus": "classified",
+    "clearanceRequired": "vibraline",
+    "ethnicity": "DATA PENDING",
+    "primaryFaction": "DATA PENDING",
+    "resonanceCore": "Universal Stabilization Frequency",
+    "dominantHand": "DATA PENDING",
+    "vickyLevel": "Complete Integration",
+    "weapon": "Resonance Command",
+    "profileOverview": "The Quantum Commander (QC) is the central resonance stabilizer and guardian of the Vibraline Hub, the ethereal command center where timelines converge, calibrate, and correct.\n\nEvery Vibraline agent ultimately reports to QC—not out of hierarchy, but out of resonant trust. Their authority is not enforced; it's felt.\n\nWhen a timeline fractures or agents glitch too deep into the Null zone, QC's frequency is the only signal strong enough to call them home.\n\nShe is the mission in action for most of Volume One.",
+    "visualSignature": [
+      "DATA PENDING"
+    ],
+    "personalityVibe": [
+      "Authority through resonance, not force",
+      "Guardian of the Hub",
+      "Ultimate timeline stabilizer",
+      "Trusted by all Vibraline agents"
+    ]
+  },
+  "captain_audassidy": {
+    "id": "captain_audassidy",
+    "emoji": "⚡",
+    "callsign": "CAPTAIN AUDASSIDY",
+    "designation": "Truth-Weaver",
+    "subtitle": "Electric Revelation Specialist",
+    "fileStatus": "classified",
+    "clearanceRequired": "vibraline",
+    "ethnicity": "Zingari",
+    "primaryFaction": "BurnKin",
+    "resonanceCore": "Truth Frequency",
+    "dominantHand": "DATA PENDING",
+    "vickyLevel": "VICK (Knowledge-Keeper)",
+    "weapon": "The Audit",
+    "profileOverview": "Audassidy burns through the false, seeing what's underneath. Her version of \"truth-weaving\" is blunt, electric revelation. She calls bullshit with precision, even when it hurts—especially then.\n\nHer emotional instincts act like a lie detector. If she feels an energy is false, unstable, or performative, she zaps it with confrontational clarity.\n\nGrew up alongside TQB in the Vibraline program, but took a more unstructured route. While TQB honed inner balance and discipline, Audassidy explored the outer edges of quantum chaos and frequency play. Often getting in trouble with the Quantum Command Center, she plays by her own rules.\n\nMantra: \"If it don't make ya heart race, what's the point?\"",
+    "visualSignature": [
+      "Maximalist fashionista—clashing prints, bold textures, glow-in-the-dark accessories",
+      "Mix-matched shoes, goggles or vintage space helmet just for fun",
+      "Hair in a puff or two puffs",
+      "Presence that crackles with electric energy"
+    ],
+    "personalityVibe": [
+      "Spunky, irreverent, wildly free",
+      "Cosmic Fool archetype—divine chaos with purpose",
+      "Blunt truth-teller who cuts through performance",
+      "Hurts because it heals"
+    ],
+    "catchphrases": [
+      "If it don't make ya heart race, what's the point?",
+      "I just want to feel something!"
+    ],
+    "relationships": [
+      {
+        "agent": "tqb",
+        "name": "The Quantum Body",
+        "type": "Program Colleague"
+      },
+      {
+        "agent": "chase_bandit",
+        "name": "Chase Bandit",
+        "type": "Synchronaut Partner"
+      }
+    ]
+  },
+  "chase_bandit": {
+    "id": "chase_bandit",
+    "emoji": "💫",
+    "callsign": "CHASE BANDIT",
+    "designation": "Sacral Specialist",
+    "subtitle": "Balance Incarnate",
+    "fileStatus": "classified",
+    "clearanceRequired": "vibraline",
+    "ethnicity": "Fluidon",
+    "primaryFaction": "FlowBorn",
+    "resonanceCore": "Sacral Chakra / Creative Flow",
+    "dominantHand": "DATA PENDING",
+    "vickyLevel": "DATA PENDING",
+    "weapon": "DATA PENDING",
+    "profileOverview": "Chase represents the sacral chakra in the QBU—centered in sensuality, connection, and creative flow. They are balanced in both their masculine and feminine energy, exuding a sense of confidence and self-awareness that attracts those around them.\n\nChase's theme is the sound of the river—always moving, always adapting, but never the same twice. Their essence is about bending with the current, flowing with the music of the universe, and letting their resonance shift timelines when needed.\n\nAs a Synchronaut pair with Audassidy, Chase forms a duo that harmonizes chaos with order, fluidity with structure. Their combined resonance is a dance of opposites that creates an electric balance.",
+    "visualSignature": [
+      "Fluid movement style—like water taking form",
+      "Triangle symbol—balance between fluid forces",
+      "Presence that adapts and shifts with the room",
+      "Magnetic energy that draws people in naturally"
+    ],
+    "personalityVibe": [
+      "Perfectly balanced masculine/feminine energy",
+      "Sensual and creative",
+      "Magnetic presence that shifts timelines",
+      "Confident self-awareness",
+      "Stops code-switching and speaks raw when it matters"
+    ],
+    "catchphrases": [
+      "Yes, I'm really sexy, all sexes they wanna sex me."
+    ],
+    "relationships": [
+      {
+        "agent": "captain_audassidy",
+        "name": "Captain Audassidy",
+        "type": "Synchronaut Partner"
+      },
+      {
+        "agent": "tqb",
+        "name": "The Quantum Body",
+        "type": "Ally"
+      },
+      {
+        "agent": "csh",
+        "name": "Captain Save a Haux",
+        "type": "Trusted Anchor"
+      },
+      {
+        "agent": "pequena",
+        "name": "Pequeña",
+        "type": "Deep Connection"
+      }
+    ]
+  },
+  "rawform": {
+    "id": "rawform",
+    "emoji": "🔥",
+    "callsign": "RAWFORM",
+    "designation": "Fusion Entity",
+    "subtitle": "Chase + Audassidy",
+    "fileStatus": "classified",
+    "clearanceRequired": "vibraline",
+    "ethnicity": "Fusion Entity",
+    "primaryFaction": "DATA PENDING",
+    "resonanceCore": "Truth + Creation Unified",
+    "vickyLevel": "DATA PENDING",
+    "weapon": "Combined Arsenal",
+    "profileOverview": "RawForm is the fusion of Chase Bandit and Captain Audassidy—the second Synchronaut fusion in QBU history, directly after Grey Matter. Where Grey Matter holds space for deep awareness, RawForm operates on pure disruption—they shatter illusions and cut through false personas with the raw power of unfiltered truth.\n\nTheir fusion wasn't planned. It was born in the heat of battle, in a high-pressure timeline collapse. One moment, they were in the middle of a heated argument, and the next... they fused. It was chaotic, it was beautiful, and neither of them saw it coming.\n\nRawForm isn't concerned with being polished, neat, or controlled. They're about the messy, chaotic brilliance of two identities colliding, breaking free of their constraints, and exposing the pure truth of who they are. Untamed, unapologetic, and powerful—nothing can stand in its way.",
+    "visualSignature": [
+      "Glitch-dance meets liquid shadow—unpredictable, fluid, always ready to explode",
+      "Aesthetic is sleek yet unpredictable—every movement feels on the edge of chaos",
+      "Combined visual elements of both Chase and Audassidy",
+      "Electric pull that draws you in before tearing through space with sharp, raw expression"
+    ],
+    "personalityVibe": [
+      "Unfiltered authenticity",
+      "Creative truth",
+      "Magnetic and confrontational",
+      "Unstoppable when unified"
+    ],
+    "relationships": [
+      {
+        "agent": "chase_bandit",
+        "name": "Chase Bandit",
+        "type": "Fusion Component"
+      },
+      {
+        "agent": "captain_audassidy",
+        "name": "Captain Audassidy",
+        "type": "Fusion Component"
+      }
+    ]
+  },
+  "unknown1": {
+    "id": "unknown1",
+    "emoji": "🔒",
+    "callsign": "CLASSIFIED",
+    "designation": "UNKNOWN",
+    "fileStatus": "classified",
+    "clearanceRequired": "initiate"
+  },
+  "unknown2": {
+    "id": "unknown2",
+    "emoji": "🔒",
+    "callsign": "CLASSIFIED",
+    "designation": "UNKNOWN",
+    "fileStatus": "classified",
+    "clearanceRequired": "vibraline"
+  }
+}
