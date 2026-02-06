@@ -945,3 +945,99 @@ a.file-link:hover {
     font-family: 'Courier New', monospace;
     font-style: italic;
 }
+
+/* ============================================================
+   SEARCH LABEL
+   ============================================================ */
+.search-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08rem;
+    vertical-align: middle;
+}
+
+/* ============================================================
+   MOBILE TOUCH FIXES — Replace hover with tap/always-visible
+   ============================================================ */
+@media (hover: none) and (pointer: coarse) {
+    /* ---- VISUAL ARCHIVES: Always show descriptions on mobile ---- */
+    .subsection-description {
+        max-height: 200px !important;
+        opacity: 1 !important;
+        margin-top: 0.75rem !important;
+    }
+    .subsection-cta {
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+    }
+    .subsection-item {
+        transform: none !important;
+    }
+
+    /* ---- GALLERY OVERLAYS: Always show on mobile ---- */
+    .item-overlay {
+        opacity: 1 !important;
+        background: rgba(5, 8, 17, 0.7) !important;
+    }
+    .gallery-item .item-title {
+        color: var(--neon-blue) !important;
+    }
+
+    /* ---- MEDIA VAULT: Always show play icon ---- */
+    .play-icon {
+        opacity: 1 !important;
+    }
+
+    /* ---- DOSSIER TABS: Better touch targets ---- */
+    .folder-tab {
+        min-height: 48px;
+        padding: 0.75rem 1rem !important;
+    }
+
+    /* ---- RECORD CARDS: No transform on hover ---- */
+    .record-card,
+    .update-card,
+    .dossier-card,
+    .file-card,
+    .transmission-card {
+        transform: none !important;
+    }
+
+    /* ---- FEED ENTRIES: No hover transform ---- */
+    .feed-entry {
+        transform: none !important;
+    }
+
+    /* ---- POLL OPTIONS: Better touch targets ---- */
+    .poll-option {
+        min-height: 48px;
+    }
+
+    /* ---- GENERAL: Bigger touch targets ---- */
+    .interaction-btn,
+    .filter-tag,
+    .note-action {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* ============================================================
+   SYSTEM FEED NOTE TAGS
+   ============================================================ */
+.note-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+.note-tag {
+    font-family: 'Courier New', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.05rem;
+    padding: 0.15rem 0.5rem;
+    background: rgba(0, 217, 255, 0.08);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    color: var(--neon-blue, #00D9FF);
+    border-radius: 2px;
+}

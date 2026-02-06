@@ -174,7 +174,7 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// Load system feed from hub-config.json and Substack RSS
+// Load system feed from hub-config.json and system-feed.json
 async function loadSystemFeed() {
     try {
         // Load hub config
@@ -212,54 +212,52 @@ async function loadSystemFeed() {
                 }).join('');
             }
             
-            // Try to load Substack RSS feed
-            if (config.substackUrl && config.substackUrl !== 'https://yoursubstack.com') {
-                loadSubstackFeed(config.substackUrl);
-            }
-            
             console.log('[HUB] Config loaded.');
         }
     } catch (err) {
         console.log('[HUB] Could not load hub-config.json:', err.message);
     }
+    
+    // Load system feed notes
+    loadSystemNotes();
 }
 
-// Load Substack RSS into system feed
-async function loadSubstackFeed(substackUrl) {
+// Load system feed from system-feed.json
+async function loadSystemNotes() {
     const feedContainer = document.getElementById('feed-container');
+    if (!feedContainer) return;
     
     try {
-        // Call our serverless function (no CORS issues)
-        const response = await fetch(`/api/substack?url=${encodeURIComponent(substackUrl)}`);
+        const response = await fetch('system-feed.json');
+        if (!response.ok) throw new Error('Failed to load system-feed.json');
         
-        if (!response.ok) throw new Error('API returned ' + response.status);
+        const notes = await response.json();
         
-        const data = await response.json();
-        
-        if (data.posts && data.posts.length > 0 && feedContainer) {
+        if (notes.length > 0) {
             feedContainer.innerHTML = '';
             
-            data.posts.slice(0, 5).forEach(p => {
-                const date = new Date(p.date);
-                const formatted = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`;
+            notes.forEach(note => {
+                const tagHtml = note.tags ? note.tags.map(t => 
+                    `<span class="note-tag">${t}</span>`
+                ).join(' ') : '';
                 
                 feedContainer.innerHTML += `
-                    <a href="${p.link}" target="_blank" class="substack-note" style="text-decoration:none;display:block;">
-                        <span class="note-timestamp">${formatted}</span>
-                        <p class="note-content" style="font-weight:bold;margin-bottom:0.25rem;">${p.title}</p>
-                        ${p.excerpt ? `<p class="note-content" style="font-size:0.8rem;opacity:0.7;">${p.excerpt}</p>` : ''}
-                    </a>
+                    <div class="substack-note">
+                        <span class="note-timestamp">${note.date}</span>
+                        <p class="note-content">${note.text}</p>
+                        ${tagHtml ? `<div class="note-tags">${tagHtml}</div>` : ''}
+                    </div>
                 `;
             });
             
-            console.log('[HUB] Substack feed loaded:', data.posts.length, 'posts');
-        } else if (feedContainer) {
+            console.log('[HUB] System feed loaded:', notes.length, 'notes');
+        } else {
             feedContainer.innerHTML = '<p class="feed-note" style="text-align:center;opacity:0.4;">No transmissions yet.</p>';
         }
     } catch (err) {
-        console.log('[HUB] Substack feed error:', err.message);
+        console.log('[HUB] System feed error:', err.message);
         if (feedContainer) {
-            feedContainer.innerHTML = '<p class="feed-note" style="text-align:center;opacity:0.4;">Feed temporarily unavailable.</p>';
+            feedContainer.innerHTML = '<p class="feed-note" style="text-align:center;opacity:0.4;">Feed loading...</p>';
         }
     }
 }

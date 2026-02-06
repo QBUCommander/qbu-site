@@ -1,0 +1,20 @@
+[
+    {
+        "id": "note-003",
+        "date": "2026.02.06 // 11:20",
+        "text": "The site is live. The infrastructure is built. Now it's time to fill it with everything that's been living in notebooks and Google Docs. The real work begins.",
+        "tags": ["update", "milestone"]
+    },
+    {
+        "id": "note-002",
+        "date": "2026.02.03 // 14:32",
+        "text": "Currently: Building the QBU website // Energy level: Rising // Next update: New dossier coming soon",
+        "tags": ["status"]
+    },
+    {
+        "id": "note-001",
+        "date": "2026.02.02 // 09:15",
+        "text": "The Whisper tried to tell me I couldn't do this. But here we are. \ud83e\ude9e",
+        "tags": ["reflection"]
+    }
+]
