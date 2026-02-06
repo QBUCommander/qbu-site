@@ -226,48 +226,41 @@ async function loadSystemFeed() {
 
 // Load Substack RSS into system feed
 async function loadSubstackFeed(substackUrl) {
+    const feedContainer = document.getElementById('feed-container');
+    
     try {
-        const feedUrl = substackUrl.replace(/\/$/, '') + '/feed';
-        const response = await fetch(feedUrl);
-        if (!response.ok) return;
+        // Call our serverless function (no CORS issues)
+        const response = await fetch(`/api/substack?url=${encodeURIComponent(substackUrl)}`);
         
-        const text = await response.text();
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(text, 'text/xml');
-        const items = xml.querySelectorAll('item');
+        if (!response.ok) throw new Error('API returned ' + response.status);
         
-        const feedContainer = document.getElementById('feed-container');
-        if (!feedContainer || items.length === 0) return;
+        const data = await response.json();
         
-        feedContainer.innerHTML = '';
-        
-        items.forEach((item, i) => {
-            if (i >= 5) return; // Show max 5 items
-            const title = item.querySelector('title')?.textContent || '';
-            const pubDate = item.querySelector('pubDate')?.textContent || '';
-            const link = item.querySelector('link')?.textContent || '';
-            const desc = item.querySelector('description')?.textContent || '';
+        if (data.posts && data.posts.length > 0 && feedContainer) {
+            feedContainer.innerHTML = '';
             
-            // Strip HTML from description
-            const tmp = document.createElement('div');
-            tmp.innerHTML = desc;
-            const cleanDesc = tmp.textContent.substring(0, 150) + '...';
+            data.posts.slice(0, 5).forEach(p => {
+                const date = new Date(p.date);
+                const formatted = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`;
+                
+                feedContainer.innerHTML += `
+                    <a href="${p.link}" target="_blank" class="substack-note" style="text-decoration:none;display:block;">
+                        <span class="note-timestamp">${formatted}</span>
+                        <p class="note-content" style="font-weight:bold;margin-bottom:0.25rem;">${p.title}</p>
+                        ${p.excerpt ? `<p class="note-content" style="font-size:0.8rem;opacity:0.7;">${p.excerpt}</p>` : ''}
+                    </a>
+                `;
+            });
             
-            const date = new Date(pubDate);
-            const formatted = `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`;
-            
-            feedContainer.innerHTML += `
-                <a href="${link}" target="_blank" class="substack-note" style="text-decoration:none;display:block;">
-                    <span class="note-timestamp">${formatted}</span>
-                    <p class="note-content" style="font-weight:bold;margin-bottom:0.25rem;">${title}</p>
-                    <p class="note-content" style="font-size:0.8rem;opacity:0.7;">${cleanDesc}</p>
-                </a>
-            `;
-        });
-        
-        console.log('[HUB] Substack feed loaded:', items.length, 'items');
+            console.log('[HUB] Substack feed loaded:', data.posts.length, 'posts');
+        } else if (feedContainer) {
+            feedContainer.innerHTML = '<p class="feed-note" style="text-align:center;opacity:0.4;">No transmissions yet.</p>';
+        }
     } catch (err) {
-        console.log('[HUB] Could not load Substack RSS:', err.message);
+        console.log('[HUB] Substack feed error:', err.message);
+        if (feedContainer) {
+            feedContainer.innerHTML = '<p class="feed-note" style="text-align:center;opacity:0.4;">Feed temporarily unavailable.</p>';
+        }
     }
 }
 
