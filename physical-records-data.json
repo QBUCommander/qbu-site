@@ -1,9 +1,0 @@
-[
-    { "id": "rec-001", "category": "intel", "title": "Mission Brief: Volume 1 Complete", "description": "Full plot summary, character breakdown, and worldbuilding notes for Volume 1 of the QBU comic.", "type": "DIGITAL FILE", "price": "$9.99", "image": "" },
-    { "id": "rec-002", "category": "artwork", "title": "Field Sketch: TQB Portrait", "description": "Limited edition print of the original TQB character portrait. Signed and numbered.", "type": "PHYSICAL PRINT", "price": "$25.00", "image": "" },
-    { "id": "rec-003", "category": "artwork", "title": "Original: The Whisper Concept Art", "description": "One-of-a-kind original concept art for The Whisper. Ink on bristol board.", "type": "ORIGINAL ARTWORK", "price": "$150.00", "image": "" },
-    { "id": "rec-004", "category": "field-gear", "title": "Vibraline Insignia Sticker Pack", "description": "Set of 5 holographic stickers featuring the Vibraline symbol and agent insignias.", "type": "FIELD GEAR", "price": "$8.00", "image": "" },
-    { "id": "rec-005", "category": "field-gear", "title": "Field Journal: Emotioneering Log", "description": "Custom-designed journal for tracking your own resonance patterns. Includes guided prompts.", "type": "FIELD GEAR", "price": "$18.00", "image": "" },
-    { "id": "rec-006", "category": "services", "title": "Custom Character Commission", "description": "Get your own QBU-style character designed. Full character sheet with backstory integration.", "type": "AGENT SERVICE", "price": "Starting at $75", "image": "" },
-    { "id": "rec-007", "category": "services", "title": "1:1 Worldbuilding Session", "description": "45-minute session where I help you build your own story-world using the QBU framework.", "type": "AGENT SERVICE", "price": "$50/session", "image": "" }
-]
