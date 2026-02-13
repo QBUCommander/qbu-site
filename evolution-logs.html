@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVOLUTION LOGS // Visual Archives // QBU</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="visual-archives-sub.css">
+</head>
+<body>
+    <div class="scan-line"></div>
+    
+    <!-- Header -->
+    <header class="hub-header">
+        <div class="header-left">
+            <img src="Vibraline_Symbol.png" alt="Vibraline" class="logo-small">
+            <div class="header-text">
+                <span class="header-title">THE QUANTUM BODY UNIVERSE</span>
+                <span class="header-subtitle">VIBRALINE INTELLIGENCE NETWORK</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="clearance-badge" id="clearance-badge">GUEST</span>
+            <button id="logout-btn" class="logout-btn">LOGOUT</button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">HUB</a>
+        <a href="origin-file.html" class="nav-link">ORIGIN FILE</a>
+        <a href="dossiers.html" class="nav-link">DOSSIERS</a>
+        <a href="transmissions.html" class="nav-link">TRANSMISSIONS</a>
+        <a href="visual-archives.html" class="nav-link active">VISUAL ARCHIVES</a>
+        <a href="command-log.html" class="nav-link">COMMAND LOG</a>
+        <a href="zones.html" class="nav-link">ZONES</a>
+        <a href="physical-records.html" class="nav-link">PHYSICAL RECORDS</a>
+            <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D;</a>
+    </nav>
+    <div class="global-search-bar" id="global-search-bar" style="display:none;">
+        <div class="search-container">
+            <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
+            <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+        </div>
+        <div id="global-search-results" class="search-results"></div>
+    </div>
+
+    <main class="sub-archives-container">
+        <!-- Back Nav -->
+        <div class="back-nav">
+            <a href="visual-archives.html" class="back-link">
+                <span class="back-arrow">&larr;</span>
+                VISUAL ARCHIVES
+            </a>
+        </div>
+
+        <!-- Header -->
+        <section class="sub-header">
+            <h1 class="page-title">
+                <span class="title-bracket">[</span>
+                EVOLUTION LOGS
+                <span class="title-bracket">]</span>
+            </h1>
+            <p class="page-subtitle">CHARACTER DEVELOPMENT // CONCEPT ART // VISUAL PROGRESSION</p>
+            <p class="section-brief">Character sketches, drawing progress, concept art, and work-in-progress files documenting the visual development of the Quantum Body Universe. Every line tells a story of becoming.</p>
+        </section>
+
+        <!-- Status -->
+        <div class="archive-status">
+            <span class="status-dot"></span>
+            <span class="status-text">ARCHIVE ACTIVE // <span class="item-count" id="item-count">8</span> ENTRIES LOGGED</span>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <span class="filter-label">FILTER:</span>
+            <div class="filter-tags">
+                <button class="filter-tag active" data-filter="all" onclick="filterGallery('all')">ALL</button>
+                <button class="filter-tag" data-filter="character" onclick="filterGallery('character')">CHARACTER SHEETS</button>
+                <button class="filter-tag" data-filter="concept" onclick="filterGallery('concept')">CONCEPT ART</button>
+                <button class="filter-tag" data-filter="wip" onclick="filterGallery('wip')">WIP / PROCESS</button>
+                <button class="filter-tag" data-filter="environment" onclick="filterGallery('environment')">ENVIRONMENTS</button>
+            </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="gallery-grid">
+
+            <div class="gallery-item" data-category="character" onclick="openLightbox(0)">
+                <div class="item-image">
+                    <span class="item-placeholder">&#9634;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW ENTRY</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="item-category">CHARACTER SHEET</span>
+                    <h3 class="item-title">TQB Character Sheet v3</h3>
+                    <div class="item-meta">
+                        <span class="item-date">2026.02.03</span>
+                        <div class="item-tags">
+                            <span class="item-tag">TQB</span>
+                            <span class="item-tag">FINAL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="character" onclick="openLightbox(1)">
+                <div class="item-image">
+                    <span class="item-placeholder">&#9634;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW ENTRY</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="item-category">CHARACTER SHEET</span>
+                    <h3 class="item-title">CSH Full Body Turnaround</h3>
+                    <div class="item-meta">
+                        <span class="item-date">2026.01.30</span>
+                        <div class="item-tags">
+                            <span class="item-tag">CSH</span>
+                            <span class="item-tag">v2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="wip" onclick="openLightbox(2)">
+                <div class="item-image">
+                    <span class="item-placeholder">&#9634;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW ENTRY</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="item-category">WIP / PROCESS</span>
+                    <h3 class="item-title">CSH Afro Detail Studies</h3>
+                    <div class="item-meta">
+                        <span class="item-date">2026.01.27</span>
+                        <div class="item-tags">
+                            <span class="item-tag">CSH</span>
+                            <span class="item-tag">HAIR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="concept" onclick="openLightbox(3)">
+                <div class="item-image">
+                    <span class="item-placeholder">&#9634;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW ENTRY</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="item-category">CONCEPT ART</span>
+                    <h3 class="item-title">Vibraline Hub Interior Concept</h3>
+                    <div class="item-meta">
+                        <span class="item-date">2026.01.22</span>
+                        <div class="item-tags">
+                            <span class="item-tag">ZONE</span>
+                            <span class="item-tag">HUB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="wip" onclick="openLightbox(4)">
+                <div class="item-image">
+                    <span class="item-placeholder">&#9634;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW ENTRY</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="item-category">WIP / PROCESS</span>
+                    <h3 class="item-title">TQB Suit Design Iterations</h3>
+                    <div class="item-meta">
+                        <span class="item-date">2026.01.18</span>
+                        <div class="item-tags">
+                            <span class="item-tag">TQB</span>
+                            <span class="item-tag">COSTUME</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="environment" onclick="openLightbox(5)">
+                <div class="item-image">
+                    <span class="item-placeholder">&#9634;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW ENTRY</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="item-category">ENVIRONMENT</span>
+                    <h3 class="item-title">The Null Zone Landscape</h3>
+                    <div class="item-meta">
+                        <span class="item-date">2026.01.14</span>
+                        <div class="item-tags">
+                            <span class="item-tag">ZONE</span>
+                            <span class="item-tag">NULL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="character" onclick="openLightbox(6)">
+                <div class="item-image">
+                    <span class="item-placeholder">&#9634;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW ENTRY</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="item-category">CHARACTER SHEET</span>
+                    <h3 class="item-title">The Whisper Expression Studies</h3>
+                    <div class="item-meta">
+                        <span class="item-date">2026.01.10</span>
+                        <div class="item-tags">
+                            <span class="item-tag">WHISPER</span>
+                            <span class="item-tag">FACES</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="concept" onclick="openLightbox(7)">
+                <div class="item-image">
+                    <span class="item-placeholder">&#9634;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW ENTRY</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="item-category">CONCEPT ART</span>
+                    <h3 class="item-title">VICKY Frequency Visualization</h3>
+                    <div class="item-meta">
+                        <span class="item-date">2026.01.05</span>
+                        <div class="item-tags">
+                            <span class="item-tag">VICKY</span>
+                            <span class="item-tag">FX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal" style="display: none;">
+        <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">X</button>
+            <div class="lightbox-image">
+                <span class="item-placeholder" id="lightbox-placeholder">&#9634;</span>
+            </div>
+            <div class="lightbox-details">
+                <span class="item-category" id="lightbox-category"></span>
+                <h2 class="lightbox-title" id="lightbox-title"></h2>
+                <p class="lightbox-subtitle" id="lightbox-date"></p>
+                <div class="lightbox-body" id="lightbox-body"></div>
+                <div class="lightbox-meta" id="lightbox-meta"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+        <p>VIBRALINE INTELLIGENCE NETWORK // QBU v0.1 // CLASSIFIED MATERIAL</p>
+    </footer>
+
+    <script>
+        // Clearance
+        document.addEventListener('DOMContentLoaded', () => {
+            const clearance = localStorage.getItem('clearance') || 'guest';
+            const badge = document.getElementById('clearance-badge');
+            if (badge) {
+                badge.textContent = clearance.toUpperCase();
+                if (clearance === 'vibraline') badge.classList.add('vibraline-tier');
+            }
+        });
+
+        // Gallery data
+        const entries = [
+            { category: 'CHARACTER SHEET', title: 'TQB Character Sheet v3', date: '2026.02.03', description: 'Third iteration of The Quantum Body character sheet. Full body front and back, color palette, suit detail callouts, and resonance signature overlay. This version introduces the updated visor design and recalibrated VICKY frequency markers.', tags: ['TQB', 'FINAL'], medium: 'Digital', status: 'ACTIVE' },
+            { category: 'CHARACTER SHEET', title: 'CSH Full Body Turnaround', date: '2026.01.30', description: 'Captain Save A Haux 360-degree turnaround. Showcasing her grounded stance, natural hair detail, tattoo placement map, and civilian-to-agent wardrobe transition. Emphasis on embodied posture and relaxed power.', tags: ['CSH', 'v2'], medium: 'Digital + Ink', status: 'ACTIVE' },
+            { category: 'WIP / PROCESS', title: 'CSH Afro Detail Studies', date: '2026.01.27', description: 'Deep-dive study pages focused on rendering natural Black hair with precision and reverence. Multiple afro shapes, shrinkage states, texture close-ups, and movement studies. Hair as character.', tags: ['CSH', 'HAIR'], medium: 'Pencil + Digital', status: 'IN PROGRESS' },
+            { category: 'CONCEPT ART', title: 'Vibraline Hub Interior Concept', date: '2026.01.22', description: 'First interior concept of the Vibraline Hub. Stillpoint architecture, resonance pools, the Zero Spiral visible through the main atrium. Designed to feel like standing inside a heartbeat.', tags: ['ZONE', 'HUB'], medium: 'Digital Painting', status: 'CONCEPT' },
+            { category: 'WIP / PROCESS', title: 'TQB Suit Design Iterations', date: '2026.01.18', description: 'Eight suit variations exploring the balance between sleek futurism and organic resonance lines. Rejected designs included, with notes on why each was eliminated. The winning design leans into geometric minimalism.', tags: ['TQB', 'COSTUME'], medium: 'Digital', status: 'RESOLVED' },
+            { category: 'ENVIRONMENT', title: 'The Null Zone Landscape', date: '2026.01.14', description: 'Establishing shot concept for the Null Zone. A vibrational underworld rendered in heavy shadow, glitch artifacts, and muted color. The ground appears to breathe. Nothing here is solid.', tags: ['ZONE', 'NULL'], medium: 'Digital Painting', status: 'CONCEPT' },
+            { category: 'CHARACTER SHEET', title: 'The Whisper Expression Studies', date: '2026.01.10', description: 'Facial expression range for The Whisper. From dead calm to full resonance burst. Eyes are the focal point \u2014 designed to feel like they\u2019re looking through you, not at you.', tags: ['WHISPER', 'FACES'], medium: 'Pencil', status: 'ACTIVE' },
+            { category: 'CONCEPT ART', title: 'VICKY Frequency Visualization', date: '2026.01.05', description: 'Visual language exploration for how VICKY frequency manifests in the comic. Color theory, waveform overlays, aura rendering, and panel integration studies. This is how resonance looks on the page.', tags: ['VICKY', 'FX'], medium: 'Digital', status: 'IN PROGRESS' }
+        ];
+
+        // Filter
+        function filterGallery(filter) {
+            document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+            document.querySelector(`[data-filter="${filter}"]`).classList.add('active');
+
+            const items = document.querySelectorAll('.gallery-item');
+            let count = 0;
+            items.forEach(item => {
+                const match = filter === 'all' || item.dataset.category === filter;
+                item.style.display = match ? '' : 'none';
+                if (match) count++;
+            });
+            document.getElementById('item-count').textContent = count;
+        }
+
+        // Lightbox
+        function openLightbox(index) {
+            const entry = entries[index];
+            if (!entry) return;
+
+            document.getElementById('lightbox-category').textContent = entry.category;
+            document.getElementById('lightbox-title').textContent = entry.title;
+            document.getElementById('lightbox-date').textContent = entry.date;
+            document.getElementById('lightbox-body').innerHTML = `<p>${entry.description}</p>`;
+            document.getElementById('lightbox-meta').innerHTML = `
+                <div class="lightbox-meta-item">
+                    <span class="lightbox-meta-label">MEDIUM</span>
+                    <span class="lightbox-meta-value">${entry.medium}</span>
+                </div>
+                <div class="lightbox-meta-item">
+                    <span class="lightbox-meta-label">STATUS</span>
+                    <span class="lightbox-meta-value">${entry.status}</span>
+                </div>
+                <div class="lightbox-meta-item">
+                    <span class="lightbox-meta-label">TAGS</span>
+                    <span class="lightbox-meta-value">${entry.tags.join(' / ')}</span>
+                </div>
+            `;
+
+            document.getElementById('lightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+    <script src="global-search.js"></script>
+</body>
+</html>

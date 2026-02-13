@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INKTERNAL MARKINGS // Visual Archives // QBU</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="visual-archives-sub.css">
+</head>
+<body>
+    <div class="scan-line"></div>
+    
+    <!-- Header -->
+    <header class="hub-header">
+        <div class="header-left">
+            <img src="Vibraline_Symbol.png" alt="Vibraline" class="logo-small">
+            <div class="header-text">
+                <span class="header-title">THE QUANTUM BODY UNIVERSE</span>
+                <span class="header-subtitle">VIBRALINE INTELLIGENCE NETWORK</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="clearance-badge" id="clearance-badge">GUEST</span>
+            <button id="logout-btn" class="logout-btn">LOGOUT</button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">HUB</a>
+        <a href="origin-file.html" class="nav-link">ORIGIN FILE</a>
+        <a href="dossiers.html" class="nav-link">DOSSIERS</a>
+        <a href="transmissions.html" class="nav-link">TRANSMISSIONS</a>
+        <a href="visual-archives.html" class="nav-link active">VISUAL ARCHIVES</a>
+        <a href="command-log.html" class="nav-link">COMMAND LOG</a>
+        <a href="zones.html" class="nav-link">ZONES</a>
+        <a href="physical-records.html" class="nav-link">PHYSICAL RECORDS</a>
+            <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D;</a>
+    </nav>
+    <div class="global-search-bar" id="global-search-bar" style="display:none;">
+        <div class="search-container">
+            <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
+            <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+        </div>
+        <div id="global-search-results" class="search-results"></div>
+    </div>
+
+    <main class="sub-archives-container">
+        <!-- Back Nav -->
+        <div class="back-nav">
+            <a href="visual-archives.html" class="back-link">
+                <span class="back-arrow">&larr;</span>
+                VISUAL ARCHIVES
+            </a>
+        </div>
+
+        <!-- Header -->
+        <section class="sub-header">
+            <h1 class="page-title">
+                <span class="title-bracket">[</span>
+                INKTERNAL MARKINGS
+                <span class="title-bracket">]</span>
+            </h1>
+            <p class="page-subtitle">SOUL DATA ENCODED IN INK // MEMORY KEEPERS // BODY CARTOGRAPHY</p>
+            <p class="section-brief">Gallery of tattoos represented in the comic. Memory keepers and soul data encoded in ink &mdash; the personal markings that inspired the Quantum Body Universe. Each tattoo is a coordinate. Each piece of ink is a frequency locked into skin.</p>
+        </section>
+
+        <!-- Status -->
+        <div class="archive-status">
+            <span class="status-dot"></span>
+            <span class="status-text">CATALOG ACTIVE // <span class="item-count" id="item-count">8</span> MARKINGS REGISTERED</span>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <span class="filter-label">FILTER:</span>
+            <div class="filter-tags">
+                <button class="filter-tag active" data-filter="all" onclick="filterInk('all')">ALL</button>
+                <button class="filter-tag" data-filter="csh" onclick="filterInk('csh')">CSH / TIFFANY</button>
+                <button class="filter-tag" data-filter="tqb" onclick="filterInk('tqb')">TQB</button>
+                <button class="filter-tag" data-filter="lore" onclick="filterInk('lore')">LORE MARKINGS</button>
+                <button class="filter-tag" data-filter="real" onclick="filterInk('real')">REAL-WORLD ORIGIN</button>
+            </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="ink-grid">
+
+            <div class="ink-item" data-category="csh" onclick="openInk(0)">
+                <div class="ink-image">
+                    <span class="item-placeholder">&#10070;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW MARKING</span></div>
+                </div>
+                <div class="ink-info">
+                    <h3 class="ink-name">VICKY Tattoo: Violet to Yellowbell</h3>
+                    <p class="ink-location">Left forearm &mdash; inner</p>
+                    <p class="ink-meaning">"A frequency gradient locked into skin. The colors map the VICKY spectrum from root resonance to crown activation."</p>
+                    <span class="ink-character">CSH / TIFFANY</span>
+                </div>
+            </div>
+
+            <div class="ink-item" data-category="csh" onclick="openInk(1)">
+                <div class="ink-image">
+                    <span class="item-placeholder">&#10070;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW MARKING</span></div>
+                </div>
+                <div class="ink-info">
+                    <h3 class="ink-name">The Remembering Mark</h3>
+                    <p class="ink-location">Right shoulder blade</p>
+                    <p class="ink-meaning">"Placed where you can't see it yourself. A reminder encoded by someone who knew you'd forget. The first marking Tiffany got."</p>
+                    <span class="ink-character">CSH / TIFFANY</span>
+                </div>
+            </div>
+
+            <div class="ink-item" data-category="real" onclick="openInk(2)">
+                <div class="ink-image">
+                    <span class="item-placeholder">&#10070;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW MARKING</span></div>
+                </div>
+                <div class="ink-info">
+                    <h3 class="ink-name">The Anchor Line</h3>
+                    <p class="ink-location">Left ribcage</p>
+                    <p class="ink-meaning">"A single line that bends but doesn't break. Inspired by a real tattoo. In the QBU, it represents the boundary between dissociation and presence."</p>
+                    <span class="ink-character">REAL-WORLD ORIGIN</span>
+                </div>
+            </div>
+
+            <div class="ink-item" data-category="tqb" onclick="openInk(3)">
+                <div class="ink-image">
+                    <span class="item-placeholder">&#10070;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW MARKING</span></div>
+                </div>
+                <div class="ink-info">
+                    <h3 class="ink-name">Resonance Circuit</h3>
+                    <p class="ink-location">Upper back &mdash; spine-aligned</p>
+                    <p class="ink-meaning">"Not decorative. Functional. TQB's circuit tattoo acts as a resonance amplifier, channeling VICKY frequency through the body's central axis."</p>
+                    <span class="ink-character">TQB</span>
+                </div>
+            </div>
+
+            <div class="ink-item" data-category="lore" onclick="openInk(4)">
+                <div class="ink-image">
+                    <span class="item-placeholder">&#10070;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW MARKING</span></div>
+                </div>
+                <div class="ink-info">
+                    <h3 class="ink-name">Pequena's Signature Seal</h3>
+                    <p class="ink-location">Varies &mdash; applied by Pequena</p>
+                    <p class="ink-meaning">"Every tattoo Pequena inks carries a hidden seal. Invisible to the eye but readable by resonance scanners. Proof that your soul data was handled with care."</p>
+                    <span class="ink-character">LORE MARKING</span>
+                </div>
+            </div>
+
+            <div class="ink-item" data-category="csh" onclick="openInk(5)">
+                <div class="ink-image">
+                    <span class="item-placeholder">&#10070;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW MARKING</span></div>
+                </div>
+                <div class="ink-info">
+                    <h3 class="ink-name">The Unfinished Map</h3>
+                    <p class="ink-location">Right forearm &mdash; outer</p>
+                    <p class="ink-meaning">"Intentionally incomplete. A constellation tattoo with blank spaces where future coordinates will go. CSH adds to it after every mission."</p>
+                    <span class="ink-character">CSH / TIFFANY</span>
+                </div>
+            </div>
+
+            <div class="ink-item" data-category="real" onclick="openInk(6)">
+                <div class="ink-image">
+                    <span class="item-placeholder">&#10070;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW MARKING</span></div>
+                </div>
+                <div class="ink-info">
+                    <h3 class="ink-name">Rest is Resistance</h3>
+                    <p class="ink-location">Inner wrist</p>
+                    <p class="ink-meaning">"Three words. No ornament. A real tattoo that became a mantra in the QBU. The Vibraline agents recognize it as a counter-signal to grind culture programming."</p>
+                    <span class="ink-character">REAL-WORLD ORIGIN</span>
+                </div>
+            </div>
+
+            <div class="ink-item" data-category="lore" onclick="openInk(7)">
+                <div class="ink-image">
+                    <span class="item-placeholder">&#10070;</span>
+                    <div class="item-overlay"><span class="overlay-text">VIEW MARKING</span></div>
+                </div>
+                <div class="ink-info">
+                    <h3 class="ink-name">The Null Scar</h3>
+                    <p class="ink-location">Left palm</p>
+                    <p class="ink-meaning">"Not a tattoo. A mark left by exposure to Null Zone energy. Agents who've entered and returned carry this permanently. It pulses when Null frequencies are near."</p>
+                    <span class="ink-character">LORE MARKING</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal" style="display: none;">
+        <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">X</button>
+            <div class="lightbox-image">
+                <span class="item-placeholder" id="lightbox-placeholder">&#10070;</span>
+            </div>
+            <div class="lightbox-details">
+                <h2 class="lightbox-title" id="lightbox-title"></h2>
+                <p class="lightbox-subtitle" id="lightbox-location"></p>
+                <div class="lightbox-body" id="lightbox-body"></div>
+                <div class="lightbox-meta" id="lightbox-meta"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+        <p>VIBRALINE INTELLIGENCE NETWORK // QBU v0.1 // CLASSIFIED MATERIAL</p>
+    </footer>
+
+    <script>
+        // Clearance
+        document.addEventListener('DOMContentLoaded', () => {
+            const clearance = localStorage.getItem('clearance') || 'guest';
+            const badge = document.getElementById('clearance-badge');
+            if (badge) {
+                badge.textContent = clearance.toUpperCase();
+                if (clearance === 'vibraline') badge.classList.add('vibraline-tier');
+            }
+        });
+
+        // Ink data
+        const markings = [
+            { name: 'VICKY Tattoo: Violet to Yellowbell', location: 'Left forearm \u2014 inner', meaning: 'A frequency gradient locked into skin. The colors map the VICKY spectrum from root resonance to crown activation. When CSH is in alignment, the tattoo is said to warm.', character: 'CSH / TIFFANY', artist: 'Pequena', type: 'FREQUENCY MAP' },
+            { name: 'The Remembering Mark', location: 'Right shoulder blade', meaning: 'Placed where you can\'t see it yourself. A reminder encoded by someone who knew you\'d forget. The first marking Tiffany got. She doesn\'t remember getting it \u2014 that\'s the point.', character: 'CSH / TIFFANY', artist: 'Unknown', type: 'MEMORY SEAL' },
+            { name: 'The Anchor Line', location: 'Left ribcage', meaning: 'A single line that bends but doesn\'t break. Inspired by a real tattoo. In the QBU, it represents the boundary between dissociation and presence. A grounding wire for the nervous system.', character: 'CROSSOVER', artist: 'Real-world origin', type: 'BOUNDARY MARKER' },
+            { name: 'Resonance Circuit', location: 'Upper back \u2014 spine-aligned', meaning: 'Not decorative. Functional. TQB\'s circuit tattoo acts as a resonance amplifier, channeling VICKY frequency through the body\'s central axis. Visible only when TQB is in full resonance mode.', character: 'TQB', artist: 'Self-applied (quantum inscription)', type: 'TECH MARKING' },
+            { name: 'Pequena\'s Signature Seal', location: 'Varies \u2014 applied by Pequena', meaning: 'Every tattoo Pequena inks carries a hidden seal. Invisible to the eye but readable by resonance scanners. Proof that your soul data was handled with care. Each seal is unique to the recipient.', character: 'LORE', artist: 'Pequena', type: 'AUTHENTICATION SEAL' },
+            { name: 'The Unfinished Map', location: 'Right forearm \u2014 outer', meaning: 'Intentionally incomplete. A constellation tattoo with blank spaces where future coordinates will go. CSH adds to it after every mission. Some dots are from timelines that no longer exist.', character: 'CSH / TIFFANY', artist: 'Pequena', type: 'MISSION LOG' },
+            { name: 'Rest is Resistance', location: 'Inner wrist', meaning: 'Three words. No ornament. A real tattoo that became a mantra in the QBU. The Vibraline agents recognize it as a counter-signal to grind culture programming. A frequency jammer disguised as text.', character: 'CROSSOVER', artist: 'Real-world origin', type: 'COUNTER-SIGNAL' },
+            { name: 'The Null Scar', location: 'Left palm', meaning: 'Not a tattoo. A mark left by exposure to Null Zone energy. Agents who\'ve entered and returned carry this permanently. It pulses when Null frequencies are near. Some agents hide it. Others wear it open.', character: 'LORE', artist: 'The Null Zone', type: 'EXPOSURE MARK' }
+        ];
+
+        // Filter
+        function filterInk(filter) {
+            document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+            document.querySelector(`[data-filter="${filter}"]`).classList.add('active');
+
+            const items = document.querySelectorAll('.ink-item');
+            let count = 0;
+            items.forEach(item => {
+                const match = filter === 'all' || item.dataset.category === filter;
+                item.style.display = match ? '' : 'none';
+                if (match) count++;
+            });
+            document.getElementById('item-count').textContent = count;
+        }
+
+        // Lightbox
+        function openInk(index) {
+            const ink = markings[index];
+            if (!ink) return;
+
+            document.getElementById('lightbox-title').textContent = ink.name;
+            document.getElementById('lightbox-location').textContent = ink.location;
+            document.getElementById('lightbox-body').innerHTML = `<p>${ink.meaning}</p>`;
+            document.getElementById('lightbox-meta').innerHTML = `
+                <div class="lightbox-meta-item">
+                    <span class="lightbox-meta-label">CHARACTER</span>
+                    <span class="lightbox-meta-value">${ink.character}</span>
+                </div>
+                <div class="lightbox-meta-item">
+                    <span class="lightbox-meta-label">ARTIST</span>
+                    <span class="lightbox-meta-value">${ink.artist}</span>
+                </div>
+                <div class="lightbox-meta-item">
+                    <span class="lightbox-meta-label">TYPE</span>
+                    <span class="lightbox-meta-value">${ink.type}</span>
+                </div>
+            `;
+
+            document.getElementById('lightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+    <script src="global-search.js"></script>
+</body>
+</html>

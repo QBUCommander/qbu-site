@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "title": "The Whisper: Self-Doubt as Villain",
+        "date": "2026-02-03",
+        "excerpt": "She's the voice that creeps in when I pick up my pencil. The one who leans over my shoulder and gently whispers...",
+        "url": "https://yoursubstack.com/p/the-whisper",
+        "clearance": "observer",
+        "views": 1250,
+        "tags": ["villain", "psychology", "character"],
+        "connections": [2, 3, 5]
+    },
+    {
+        "id": 2,
+        "title": "VICKY: The Soul-Tech Interface",
+        "date": "2026-01-28",
+        "excerpt": "V.I.C.K.Y. is a living resonance architecture, an AI unlike any other — half sentient code, half soul-encoded archive...",
+        "url": "https://yoursubstack.com/p/vicky-system",
+        "clearance": "observer",
+        "views": 980,
+        "tags": ["system", "AI", "lore"],
+        "connections": [1, 4, 6]
+    },
+    {
+        "id": 3,
+        "title": "What is Vibraline?",
+        "date": "2026-01-20",
+        "excerpt": "The interdimensional intelligence agency dedicated to maintaining energetic equilibrium across realities...",
+        "url": "https://yoursubstack.com/p/vibraline",
+        "clearance": "guest",
+        "views": 2100,
+        "tags": ["lore", "foundation", "worldbuilding"],
+        "connections": [1, 2, 7]
+    },
+    {
+        "id": 4,
+        "title": "Captain Save a Haux: Origin Story",
+        "date": "2026-01-15",
+        "excerpt": "She wasn't supposed to be here. She's not polished. She's not the best-trained. But when things fall apart...",
+        "url": "https://yoursubstack.com/p/csh-origin",
+        "clearance": "guest",
+        "views": 1850,
+        "tags": ["character", "origin", "CSH"],
+        "connections": [2, 5, 8]
+    },
+    {
+        "id": 5,
+        "title": "The Quantum Body: Precision Incarnate",
+        "date": "2026-01-10",
+        "excerpt": "TQB is a sleek, precise, interdimensional agent whose blend of crystalline logic and divine intuition...",
+        "url": "https://yoursubstack.com/p/tqb-profile",
+        "clearance": "guest",
+        "views": 1920,
+        "tags": ["character", "TQB", "agents"],
+        "connections": [1, 4, 6]
+    },
+    {
+        "id": 6,
+        "title": "Grey Matter: The First Fusion",
+        "date": "2026-01-05",
+        "excerpt": "The sacred fusion of CSH and TQB, representing the first successful full-synchronaut fusion in QBU history...",
+        "url": "https://yoursubstack.com/p/grey-matter",
+        "clearance": "initiate",
+        "views": 750,
+        "tags": ["fusion", "advanced", "lore"],
+        "connections": [2, 5, 7]
+    },
+    {
+        "id": 7,
+        "title": "The Zones: Mapping the QBU",
+        "date": "2025-12-28",
+        "excerpt": "Physical locations, dimensional planes, and mental spaces — all exist simultaneously within the QBU...",
+        "url": "https://yoursubstack.com/p/zones",
+        "clearance": "observer",
+        "views": 890,
+        "tags": ["worldbuilding", "locations", "zones"],
+        "connections": [3, 6, 8]
+    },
+    {
+        "id": 8,
+        "title": "Inkternals: Memory Keepers",
+        "date": "2025-12-20",
+        "excerpt": "Tattoo artists who do not merely decorate skin, but safeguard soul data across dimensions...",
+        "url": "https://yoursubstack.com/p/inkternals",
+        "clearance": "initiate",
+        "views": 650,
+        "tags": ["character", "tattoos", "lore"],
+        "connections": [4, 7]
+    },
+    {
+        "id": 9,
+        "title": "Mission Brief: Timeline Stabilization",
+        "date": "2025-12-15",
+        "excerpt": "How Vibraline agents navigate emotional fields and energetic architecture to maintain universal balance...",
+        "url": "https://yoursubstack.com/p/missions",
+        "clearance": "vibraline",
+        "views": 420,
+        "tags": ["missions", "operations", "advanced"],
+        "connections": [6, 10]
+    },
+    {
+        "id": 10,
+        "title": "The Null Zone: Where Timelines Collapse",
+        "date": "2025-12-10",
+        "excerpt": "The most dangerous territory in the QBU — where emotional imbalances reach critical mass...",
+        "url": "https://yoursubstack.com/p/null-zone",
+        "clearance": "vibraline",
+        "views": 380,
+        "tags": ["zones", "danger", "advanced"],
+        "connections": [9]
+    }
+]

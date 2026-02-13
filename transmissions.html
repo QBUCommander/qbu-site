@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSMISSIONS // QBU Vibraline</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transmissions.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="scan-line"></div>
+    
+    <!-- Header -->
+    <header class="hub-header">
+        <div class="header-left">
+            <img src="Vibraline_Symbol.png" alt="Vibraline" class="logo-small">
+            <div class="header-text">
+                <span class="header-title">THE QUANTUM BODY UNIVERSE</span>
+                <span class="header-subtitle">VIBRALINE INTELLIGENCE NETWORK</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="clearance-badge" id="clearance-badge">GUEST</span>
+            <button id="logout-btn" class="logout-btn">LOGOUT</button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">HUB</a>
+        <a href="origin-file.html" class="nav-link">ORIGIN FILE</a>
+        <a href="dossiers.html" class="nav-link">DOSSIERS</a>
+        <a href="transmissions.html" class="nav-link active">TRANSMISSIONS</a>
+        <a href="visual-archives.html" class="nav-link">VISUAL ARCHIVES</a>
+        <a href="command-log.html" class="nav-link">COMMAND LOG</a>
+        <a href="zones.html" class="nav-link">ZONES</a>
+        <a href="physical-records.html" class="nav-link">PHYSICAL RECORDS</a>
+            <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D;</a>
+    </nav>
+    <div class="global-search-bar" id="global-search-bar" style="display:none;">
+        <div class="search-container">
+            <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
+            <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+        </div>
+        <div id="global-search-results" class="search-results"></div>
+    </div>
+
+    <!-- Transmissions Main Content -->
+    <main class="transmissions-container">
+        <!-- Header Section -->
+        <section class="transmissions-header">
+            <h1 class="page-title">
+                <span class="title-bracket">[</span>
+                TRANSMISSIONS
+                <span class="title-bracket">]</span>
+            </h1>
+            <p class="page-subtitle">INTELLIGENCE FEED // SUBSTACK ARCHIVE // INTERCONNECTED KNOWLEDGE</p>
+        </section>
+
+        <!-- Controls -->
+        <section class="transmission-controls">
+            <div class="control-group">
+                <input type="text" id="search-transmissions" class="terminal-input" placeholder="SEARCH TRANSMISSIONS...">
+            </div>
+            <div class="control-group">
+                <select id="filter-clearance" class="terminal-input">
+                    <option value="all">ALL CLEARANCE LEVELS</option>
+                    <option value="guest">GUEST ACCESS</option>
+                    <option value="observer">OBSERVER+</option>
+                    <option value="initiate">INITIATE+</option>
+                    <option value="vibraline">VIBRALINE ONLY</option>
+                </select>
+                <select id="sort-by" class="terminal-input">
+                    <option value="recent">MOST RECENT</option>
+                    <option value="popular">MOST POPULAR</option>
+                    <option value="relevant">MOST RELEVANT</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <button id="reset-view" class="control-btn">RESET VIEW</button>
+                <button id="toggle-connections" class="control-btn active">SHOW CONNECTIONS</button>
+            </div>
+        </section>
+
+        <!-- Network Visualization -->
+        <section class="network-container">
+            <div id="transmission-network"></div>
+            
+            <!-- Legend -->
+            <div class="network-legend">
+                <div class="legend-item">
+                    <div class="legend-node guest-node"></div>
+                    <span>Guest Access</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-node observer-node"></div>
+                    <span>Observer+</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-node initiate-node"></div>
+                    <span>Initiate+</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-node vibraline-node"></div>
+                    <span>Vibraline Only</span>
+                </div>
+            </div>
+            
+            <!-- Loading state -->
+            <div id="loading-state" class="loading-state">
+                <div class="loading-spinner"></div>
+                <p>INITIALIZING TRANSMISSION NETWORK...</p>
+            </div>
+        </section>
+
+        <!-- Article Preview Modal -->
+        <div id="article-modal" class="article-modal" style="display: none;">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeArticleModal()">✕</button>
+                <div id="modal-body">
+                    <!-- Content loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+        <p>VIBRALINE INTELLIGENCE NETWORK // QBU v0.1 // CLASSIFIED MATERIAL</p>
+    </footer>
+
+    <script src="transmissions.js"></script>
+    <script src="global-search.js"></script>
+</body>
+</html>

@@ -1,0 +1,531 @@
+/* ============================================
+   ZONES â€” TERRITORIAL SCAN
+   Scroll-zoom terrain with hover intel panel
+   ============================================ */
+
+.zones-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 200px);
+}
+
+.zones-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.zones-instructions {
+    margin-top: 1rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(0, 217, 255, 0.06);
+    border: 1px solid rgba(0, 217, 255, 0.25);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.zones-instructions p {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    letter-spacing: 0.08rem;
+    margin: 0;
+}
+
+/* ============================================
+   TERRAIN VIEWPORT
+   ============================================ */
+
+.terrain-viewport {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    background: #050811;
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+#terrain-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: default;
+}
+
+#terrain-canvas:active {
+    cursor: default;
+}
+
+/* Scanline Grid Overlay */
+.scanline-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(0deg,
+            transparent 24%,
+            rgba(0, 217, 255, 0.03) 25%,
+            rgba(0, 217, 255, 0.03) 26%,
+            transparent 27%,
+            transparent 74%,
+            rgba(0, 217, 255, 0.03) 75%,
+            rgba(0, 217, 255, 0.03) 76%,
+            transparent 77%,
+            transparent),
+        linear-gradient(90deg,
+            transparent 24%,
+            rgba(0, 217, 255, 0.03) 25%,
+            rgba(0, 217, 255, 0.03) 26%,
+            transparent 27%,
+            transparent 74%,
+            rgba(0, 217, 255, 0.03) 75%,
+            rgba(0, 217, 255, 0.03) 76%,
+            transparent 77%,
+            transparent);
+    background-size: 50px 50px;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* ============================================
+   HUD (top-right)
+   ============================================ */
+
+.terrain-hud {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hud-item {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    backdrop-filter: blur(4px);
+}
+
+.hud-label {
+    color: var(--text-secondary);
+    font-size: 0.65rem;
+    letter-spacing: 0.1rem;
+}
+
+.hud-value {
+    color: var(--neon-blue);
+    font-size: 0.65rem;
+    letter-spacing: 0.05rem;
+    font-weight: bold;
+}
+
+/* ============================================
+   ZONE INTEL PANEL â€” slides in from the left
+   ============================================ */
+
+.zone-intel-panel {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 260px;
+    background: rgba(5, 8, 17, 0.92);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    backdrop-filter: blur(8px);
+    pointer-events: none;
+    z-index: 10;
+
+    /* Slide + fade transition */
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    overflow: hidden;
+}
+
+.zone-intel-panel.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Accent stripe along the left edge */
+.intel-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--neon-blue);
+}
+
+.intel-inner {
+    padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+}
+
+.intel-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.intel-icon {
+    font-size: 1.3rem;
+    filter: drop-shadow(0 0 6px rgba(0, 217, 255, 0.4));
+}
+
+.intel-designation {
+    font-size: 0.6rem;
+    letter-spacing: 0.15rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.intel-name {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    color: var(--neon-blue);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+}
+
+.intel-type {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.08rem;
+    margin-bottom: 0.8rem;
+}
+
+.intel-sep {
+    border-top: 1px solid rgba(0, 217, 255, 0.2);
+    margin-bottom: 0.8rem;
+}
+
+.intel-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.intel-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.1rem;
+    color: var(--text-secondary);
+}
+
+.intel-value {
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.08rem;
+}
+
+.intel-tagline {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+.intel-status {
+    font-size: 0.65rem;
+    letter-spacing: 0.1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+.intel-status.open {
+    color: var(--neon-blue);
+}
+
+.intel-status.locked {
+    color: var(--warning-red);
+}
+
+.intel-inner.locked .intel-name {
+    color: var(--warning-red) !important;
+}
+
+/* ============================================
+   LEGEND (below terrain)
+   ============================================ */
+
+.zones-legend {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(10, 14, 39, 0.5);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.legend-title {
+    font-size: 1.1rem;
+    color: var(--neon-blue);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.legend-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.legend-color {
+    width: 36px;
+    height: 16px;
+    border: 1px solid rgba(0, 217, 255, 0.4);
+    flex-shrink: 0;
+}
+
+.guest-color    { background: rgba(0, 217, 255, 0.25); }
+.observer-color { background: rgba(0, 217, 255, 0.45); }
+.initiate-color { background: rgba(0, 255, 255, 0.5);  }
+.vibraline-color { background: rgba(0, 255, 136, 0.55); }
+
+.legend-text {
+    color: var(--text-primary);
+    font-size: 0.8rem;
+}
+
+/* ============================================
+   ZONE DETAIL MODAL
+   ============================================ */
+
+.zone-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: relative;
+    background: rgba(8, 12, 30, 0.98);
+    border: 1px solid rgba(0, 217, 255, 0.4);
+    max-width: 900px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 3rem;
+    box-shadow:
+        0 0 40px rgba(0, 217, 255, 0.15),
+        inset 0 0 80px rgba(0, 217, 255, 0.03);
+    z-index: 10000;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid rgba(0, 217, 255, 0.4);
+    color: var(--neon-blue);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: var(--neon-blue);
+    color: var(--darker-bg);
+}
+
+/* Zone Detail Content */
+.zone-detail-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.zone-detail-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 15px var(--neon-blue));
+}
+
+.zone-detail-title {
+    font-size: 2.2rem;
+    color: var(--neon-blue);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.15rem;
+}
+
+.zone-detail-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.zone-aliases {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.zone-detail-section {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    color: var(--neon-blue);
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+    border-left: 3px solid var(--neon-blue);
+    padding-left: 1rem;
+}
+
+.section-content {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.section-content p {
+    margin-bottom: 1rem;
+}
+
+.zone-functions {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.function-item {
+    padding: 0.8rem 1rem;
+    background: rgba(0, 217, 255, 0.04);
+    border-left: 2px solid rgba(0, 217, 255, 0.3);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.faction-grid {
+    display: grid;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.faction-item {
+    padding: 1.2rem;
+    background: rgba(0, 217, 255, 0.03);
+    border: 1px solid rgba(0, 217, 255, 0.15);
+}
+
+.faction-name {
+    font-size: 1.1rem;
+    color: var(--neon-blue);
+    margin-bottom: 0.4rem;
+}
+
+.faction-essence {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+}
+
+.faction-homeland {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .terrain-viewport {
+        height: 550px;
+    }
+
+    .zone-intel-panel {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .zones-container {
+        padding: 1rem;
+    }
+
+    .terrain-viewport {
+        height: 420px;
+    }
+
+    .zone-intel-panel {
+        width: 200px;
+        top: auto;
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    .zones-legend {
+        padding: 1.5rem;
+    }
+
+    .legend-items {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        padding: 2rem;
+    }
+
+    .zone-detail-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .terrain-viewport {
+        height: 350px;
+    }
+
+    .zone-intel-panel {
+        width: 180px;
+    }
+
+    .intel-name {
+        font-size: 0.85rem;
+    }
+}

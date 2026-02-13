@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMMAND LOG // QBU Vibraline</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="command-log.css">
+</head>
+<body>
+    <div class="scan-line"></div>
+    
+    <!-- Header -->
+    <header class="hub-header">
+        <div class="header-left">
+            <img src="Vibraline_Symbol.png" alt="Vibraline" class="logo-small">
+            <div class="header-text">
+                <span class="header-title">THE QUANTUM BODY UNIVERSE</span>
+                <span class="header-subtitle">VIBRALINE INTELLIGENCE NETWORK</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="clearance-badge" id="clearance-badge">GUEST</span>
+            <button id="logout-btn" class="logout-btn">LOGOUT</button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">HUB</a>
+        <a href="origin-file.html" class="nav-link">ORIGIN FILE</a>
+        <a href="dossiers.html" class="nav-link">DOSSIERS</a>
+        <a href="transmissions.html" class="nav-link">TRANSMISSIONS</a>
+        <a href="visual-archives.html" class="nav-link">VISUAL ARCHIVES</a>
+        <a href="command-log.html" class="nav-link active">COMMAND LOG</a>
+        <a href="zones.html" class="nav-link">ZONES</a>
+        <a href="physical-records.html" class="nav-link">PHYSICAL RECORDS</a>
+            <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D;</a>
+    </nav>
+    <div class="global-search-bar" id="global-search-bar" style="display:none;">
+        <div class="search-container">
+            <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
+            <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+        </div>
+        <div id="global-search-results" class="search-results"></div>
+    </div>
+
+    <!-- Command Log Main -->
+    <main class="command-log-container">
+        <!-- Header -->
+        <section class="command-header">
+            <h1 class="page-title">
+                <span class="title-bracket">[</span>
+                COMMAND LOG
+                <span class="title-bracket">]</span>
+            </h1>
+            <p class="page-subtitle">RAW CREATIVE DIARY // REAL-TIME PROCESS // CLEARANCE: INITIATE+</p>
+            <div class="command-description">
+                <p>This is where the work gets made. Unfiltered. In real-time. Failed experiments, half-baked ideas, 2am spirals, and decision points. 
+                <strong>Initiates</strong> witness the process. <strong>Vibralines</strong> shape it.</p>
+            </div>
+        </section>
+
+        <!-- Clearance Check -->
+        <div id="clearance-gate" class="clearance-gate" style="display: none;">
+            <div class="gate-content">
+                <div class="gate-icon">🔒</div>
+                <h2 class="gate-title">RESTRICTED ACCESS</h2>
+                <p class="gate-message">Command Log requires INITIATE clearance or higher.</p>
+                <p class="gate-description">Access raw creative process, failed experiments, real-time decisions, and community interaction.</p>
+                <a href="https://yoursubstack.com/subscribe" class="upgrade-button" target="_blank">
+                    UPGRADE CLEARANCE
+                </a>
+            </div>
+        </div>
+
+        <!-- Feed Container -->
+        <section id="command-feed" class="command-feed">
+            <!-- Filter Tags -->
+            <div class="feed-filters">
+                <button class="filter-tag active" data-filter="all">ALL</button>
+                <button class="filter-tag" data-filter="reflection">REFLECTIONS</button>
+                <button class="filter-tag" data-filter="decision">DECISION POINTS</button>
+                <button class="filter-tag" data-filter="scrapped">SCRAPPED IDEAS</button>
+                <button class="filter-tag" data-filter="audio">AUDIO LOGS</button>
+                <button class="filter-tag" data-filter="ritual">RITUALS</button>
+                <button class="filter-tag" data-filter="poll">POLLS</button>
+                <button class="filter-tag" data-filter="ama">Q&A</button>
+            </div>
+
+            <!-- Feed Entries -->
+            <div class="feed-timeline">
+                    <!-- Entries rendered dynamically from command-log-entries.json -->
+                </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+        <p>VIBRALINE INTELLIGENCE NETWORK // QBU v0.1 // CLASSIFIED MATERIAL</p>
+    </footer>
+
+    <script src="command-log.js"></script>
+    <script src="global-search.js"></script>
+</body>
+</html>

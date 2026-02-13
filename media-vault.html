@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIA VAULT // Visual Archives // QBU</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="visual-archives-sub.css">
+</head>
+<body>
+    <div class="scan-line"></div>
+    
+    <!-- Header -->
+    <header class="hub-header">
+        <div class="header-left">
+            <img src="Vibraline_Symbol.png" alt="Vibraline" class="logo-small">
+            <div class="header-text">
+                <span class="header-title">THE QUANTUM BODY UNIVERSE</span>
+                <span class="header-subtitle">VIBRALINE INTELLIGENCE NETWORK</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <span class="clearance-badge" id="clearance-badge">GUEST</span>
+            <button id="logout-btn" class="logout-btn">LOGOUT</button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">HUB</a>
+        <a href="origin-file.html" class="nav-link">ORIGIN FILE</a>
+        <a href="dossiers.html" class="nav-link">DOSSIERS</a>
+        <a href="transmissions.html" class="nav-link">TRANSMISSIONS</a>
+        <a href="visual-archives.html" class="nav-link active">VISUAL ARCHIVES</a>
+        <a href="command-log.html" class="nav-link">COMMAND LOG</a>
+        <a href="zones.html" class="nav-link">ZONES</a>
+        <a href="physical-records.html" class="nav-link">PHYSICAL RECORDS</a>
+            <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D;</a>
+    </nav>
+    <div class="global-search-bar" id="global-search-bar" style="display:none;">
+        <div class="search-container">
+            <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
+            <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+        </div>
+        <div id="global-search-results" class="search-results"></div>
+    </div>
+
+    <main class="sub-archives-container">
+        <!-- Back Nav -->
+        <div class="back-nav">
+            <a href="visual-archives.html" class="back-link">
+                <span class="back-arrow">&larr;</span>
+                VISUAL ARCHIVES
+            </a>
+        </div>
+
+        <!-- Header -->
+        <section class="sub-header">
+            <h1 class="page-title">
+                <span class="title-bracket">[</span>
+                MEDIA VAULT
+                <span class="title-bracket">]</span>
+            </h1>
+            <p class="page-subtitle">VIDEO SURVEILLANCE // PROCESS RECORDINGS // FIELD DOCUMENTATION</p>
+            <p class="section-brief">YouTube videos, behind-the-scenes content, drawing process recordings, and photographic documentation from the QBU journey. Every frame is evidence.</p>
+        </section>
+
+        <!-- Status -->
+        <div class="archive-status">
+            <span class="status-dot"></span>
+            <span class="status-text">VAULT ACTIVE // <span class="item-count" id="item-count">6</span> FILES CATALOGED</span>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <span class="filter-label">FILTER:</span>
+            <div class="filter-tags">
+                <button class="filter-tag active" data-filter="all" onclick="filterMedia('all')">ALL</button>
+                <button class="filter-tag" data-filter="process" onclick="filterMedia('process')">DRAWING PROCESS</button>
+                <button class="filter-tag" data-filter="bts" onclick="filterMedia('bts')">BEHIND THE SCENES</button>
+                <button class="filter-tag" data-filter="lore" onclick="filterMedia('lore')">LORE DROPS</button>
+                <button class="filter-tag" data-filter="photo" onclick="filterMedia('photo')">PHOTO INTEL</button>
+            </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="media-grid">
+
+            <div class="media-item" data-category="process">
+                <div class="media-thumbnail">
+                    <span class="item-placeholder">&#9654;</span>
+                    <div class="play-icon"></div>
+                    <span class="media-duration">12:34</span>
+                    <span class="media-type-badge">YOUTUBE</span>
+                </div>
+                <div class="media-info">
+                    <h3 class="media-title">Drawing Process: CSH Afro Details</h3>
+                    <p class="media-description">Full timelapse of rendering CSH's natural hair texture. Pencil to digital, with commentary on why hair matters in representation.</p>
+                    <div class="media-meta">
+                        <span class="media-date">2026.02.02</span>
+                        <div class="item-tags">
+                            <span class="item-tag">CSH</span>
+                            <span class="item-tag">TIMELAPSE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-item" data-category="lore">
+                <div class="media-thumbnail">
+                    <span class="item-placeholder">&#9654;</span>
+                    <div class="play-icon"></div>
+                    <span class="media-duration">8:17</span>
+                    <span class="media-type-badge">YOUTUBE</span>
+                </div>
+                <div class="media-info">
+                    <h3 class="media-title">What is VICKY? The Frequency Explained</h3>
+                    <p class="media-description">Deep dive into the VICKY system and how it operates as the foundational frequency of the Quantum Body Universe.</p>
+                    <div class="media-meta">
+                        <span class="media-date">2026.01.28</span>
+                        <div class="item-tags">
+                            <span class="item-tag">VICKY</span>
+                            <span class="item-tag">LORE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-item" data-category="bts">
+                <div class="media-thumbnail">
+                    <span class="item-placeholder">&#9654;</span>
+                    <div class="play-icon"></div>
+                    <span class="media-duration">15:42</span>
+                    <span class="media-type-badge">YOUTUBE</span>
+                </div>
+                <div class="media-info">
+                    <h3 class="media-title">Building a Universe From Scratch</h3>
+                    <p class="media-description">Studio vlog documenting the early days of QBU development. Sketchbooks, reference walls, and the moment the concept clicked.</p>
+                    <div class="media-meta">
+                        <span class="media-date">2026.01.20</span>
+                        <div class="item-tags">
+                            <span class="item-tag">BTS</span>
+                            <span class="item-tag">VLOG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-item" data-category="process">
+                <div class="media-thumbnail">
+                    <span class="item-placeholder">&#9654;</span>
+                    <div class="play-icon"></div>
+                    <span class="media-duration">22:08</span>
+                    <span class="media-type-badge">YOUTUBE</span>
+                </div>
+                <div class="media-info">
+                    <h3 class="media-title">TQB Suit Design: From Sketch to Final</h3>
+                    <p class="media-description">Complete design process for The Quantum Body's signature suit. Eight iterations, live commentary on each rejection and refinement.</p>
+                    <div class="media-meta">
+                        <span class="media-date">2026.01.15</span>
+                        <div class="item-tags">
+                            <span class="item-tag">TQB</span>
+                            <span class="item-tag">DESIGN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-item" data-category="photo">
+                <div class="media-thumbnail">
+                    <span class="item-placeholder">&#9634;</span>
+                    <span class="media-type-badge">PHOTO SET</span>
+                </div>
+                <div class="media-info">
+                    <h3 class="media-title">Studio Reference Wall Documentation</h3>
+                    <p class="media-description">Photographs of the physical reference wall used during character development. Mood boards, color swatches, and pinned sketches.</p>
+                    <div class="media-meta">
+                        <span class="media-date">2026.01.10</span>
+                        <div class="item-tags">
+                            <span class="item-tag">STUDIO</span>
+                            <span class="item-tag">REF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-item" data-category="lore">
+                <div class="media-thumbnail">
+                    <span class="item-placeholder">&#9654;</span>
+                    <div class="play-icon"></div>
+                    <span class="media-duration">11:55</span>
+                    <span class="media-type-badge">YOUTUBE</span>
+                </div>
+                <div class="media-info">
+                    <h3 class="media-title">The Zones: Mapping the QBU Territories</h3>
+                    <p class="media-description">Walkthrough of every zone in the Quantum Body Universe. Origins, purposes, and the clearance system that governs access.</p>
+                    <div class="media-meta">
+                        <span class="media-date">2026.01.05</span>
+                        <div class="item-tags">
+                            <span class="item-tag">ZONES</span>
+                            <span class="item-tag">LORE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+        <p>VIBRALINE INTELLIGENCE NETWORK // QBU v0.1 // CLASSIFIED MATERIAL</p>
+    </footer>
+
+    <script>
+        // Clearance
+        document.addEventListener('DOMContentLoaded', () => {
+            const clearance = localStorage.getItem('clearance') || 'guest';
+            const badge = document.getElementById('clearance-badge');
+            if (badge) {
+                badge.textContent = clearance.toUpperCase();
+                if (clearance === 'vibraline') badge.classList.add('vibraline-tier');
+            }
+        });
+
+        // Filter
+        function filterMedia(filter) {
+            document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+            document.querySelector(`[data-filter="${filter}"]`).classList.add('active');
+
+            const items = document.querySelectorAll('.media-item');
+            let count = 0;
+            items.forEach(item => {
+                const match = filter === 'all' || item.dataset.category === filter;
+                item.style.display = match ? '' : 'none';
+                if (match) count++;
+            });
+            document.getElementById('item-count').textContent = count;
+        }
+    </script>
+    <script src="global-search.js"></script>
+</body>
+</html>
