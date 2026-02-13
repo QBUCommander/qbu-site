@@ -35,7 +35,7 @@
                     <span class="btn-glitch">ENTER HUB</span>
                 </button>
             </div>
-            <div class="system-status">
+            <div class="system-status-login">
                 <span class="status-dot"></span>
                 <span>SYSTEM ONLINE // ALL NETWORKS OPERATIONAL</span>
             </div>
@@ -58,11 +58,16 @@
             <div class="header-right">
                 <span class="clearance-badge" id="clearance-badge">GUEST</span>
                 <button id="logout-btn" class="logout-btn">LOGOUT</button>
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </header>
 
         <!-- Navigation -->
-        <nav class="main-nav">
+        <nav class="main-nav" id="main-nav">
             <a href="#hub" class="nav-link active">HUB</a>
             <a href="origin-file.html" class="nav-link">ORIGIN FILE</a>
             <a href="dossiers.html" class="nav-link">DOSSIERS</a>
@@ -71,20 +76,23 @@
             <a href="command-log.html" class="nav-link">COMMAND LOG</a>
             <a href="zones.html" class="nav-link">ZONES</a>
             <a href="physical-records.html" class="nav-link">PHYSICAL RECORDS</a>
-                <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D; <span class="search-label">SEARCH</span></a>
-    </nav>
-    <div class="global-search-bar" id="global-search-bar" style="display:none;">
-        <div class="search-container">
-            <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
-            <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+            <a href="#" class="nav-link nav-search-toggle" onclick="toggleGlobalSearch(event)" title="Search">&#x1F50D; SEARCH</a>
+        </nav>
+        <!-- Nav overlay for mobile -->
+        <div class="nav-overlay" id="nav-overlay"></div>
+
+        <div class="global-search-bar" id="global-search-bar" style="display:none;">
+            <div class="search-container">
+                <input type="text" id="global-search-input" placeholder="Search the QBU..." autocomplete="off" onkeyup="handleGlobalSearch(event)">
+                <button onclick="closeGlobalSearch()" class="search-close">&times;</button>
+            </div>
+            <div id="global-search-results" class="search-results"></div>
         </div>
-        <div id="global-search-results" class="search-results"></div>
-    </div>
 
         <!-- Main Content Area -->
         <main class="hub-content">
             <!-- System Status -->
-            <section class="creator-status">
+            <section class="system-status-section">
                 <h2 class="section-title">
                     <span class="title-bracket">[</span>
                     SYSTEM STATUS
@@ -93,7 +101,7 @@
                 <div class="status-container">
                     <div class="status-indicator">
                         <span class="status-pulse"></span>
-                        <span class="status-label">CREATOR STATUS: ONLINE</span>
+                        <span class="status-label">NETWORK: ONLINE</span>
                     </div>
                     <div class="status-message" id="creator-status">
                         Currently: Building the QBU website // Energy level: Rising // Next update: New dossier coming soon
@@ -101,56 +109,6 @@
                     <div class="status-meta">
                         <span class="status-timestamp">LAST UPDATE: 2026.02.03 // 15:47</span>
                     </div>
-                </div>
-            </section>
-
-            <!-- Substack Notes Feed -->
-            <section class="system-feed">
-                <h2 class="section-title">
-                    <span class="title-bracket">[</span>
-                    SYSTEM FEED
-                    <span class="title-bracket">]</span>
-                </h2>
-                <div class="feed-container" id="feed-container">
-                    <p class="feed-note" style="text-align:center; opacity:0.5;">Loading transmissions…</p>
-                </div>
-            </section>
-
-            <!-- Featured Dossiers -->
-            <section class="featured-dossiers">
-                <h2 class="section-title">
-                    <span class="title-bracket">[</span>
-                    PRIORITY AGENTS
-                    <span class="title-bracket">]</span>
-                </h2>
-                <div class="dossier-grid">
-                    <a href="dossiers.html?agent=csh" class="dossier-card" data-agent="csh">
-                        <div class="card-header">
-                            <span class="agent-code">AGENT // CSH</span>
-                            <span class="clearance-level">CLEARANCE: GUEST+</span>
-                        </div>
-                        <div class="card-image-placeholder">
-                            <div class="image-scan"></div>
-                            <span class="image-text">VISUAL DATA PENDING</span>
-                        </div>
-                        <h3 class="agent-name">CAPTAIN SAVE A HAUX</h3>
-                        <p class="agent-preview">Primary operative specializing in temporal rescue operations and dimensional navigation...</p>
-                        <span class="view-dossier-btn">ACCESS FULL DOSSIER →</span>
-                    </a>
-
-                    <a href="dossiers.html?agent=tqb" class="dossier-card" data-agent="tqb">
-                        <div class="card-header">
-                            <span class="agent-code">AGENT // TQB</span>
-                            <span class="clearance-level">CLEARANCE: GUEST+</span>
-                        </div>
-                        <div class="card-image-placeholder">
-                            <div class="image-scan"></div>
-                            <span class="image-text">VISUAL DATA PENDING</span>
-                        </div>
-                        <h3 class="agent-name">THE QUANTUM BODY</h3>
-                        <p class="agent-preview">Central intelligence unit bridging consciousness streams across multiple dimensional frequencies...</p>
-                        <span class="view-dossier-btn">ACCESS FULL DOSSIER →</span>
-                    </a>
                 </div>
             </section>
 
@@ -162,25 +120,25 @@
                     <span class="title-bracket">]</span>
                 </h2>
                 <div class="files-grid" id="recent-files">
-                    <!-- Recent files will be populated dynamically -->
+                    <!-- Populated dynamically from hub-config.json -->
                     <a href="dossiers.html?agent=tqb" class="file-card">
                         <span class="file-date">2026.02.03</span>
                         <span class="file-type">DOSSIER</span>
-                        <span class="file-link">The Quantum Body - Agent Profile Added</span>
+                        <span class="file-link">The Quantum Body &mdash; Agent Profile Added</span>
                     </a>
                     <a href="dossiers.html?agent=csh" class="file-card">
                         <span class="file-date">2026.02.03</span>
                         <span class="file-type">DOSSIER</span>
-                        <span class="file-link">Captain Save a Haux - Agent Profile Added</span>
+                        <span class="file-link">Captain Save a Haux &mdash; Agent Profile Added</span>
                     </a>
-                    <div class="file-card non-clickable">
+                    <div class="file-card file-card--system">
                         <span class="file-date">2026.02.02</span>
-                        <span class="file-type">SYSTEM</span>
+                        <span class="file-type file-type--system">SYSTEM</span>
                         <span class="file-link">Personnel Database Initialized</span>
                     </div>
-                    <div class="file-card non-clickable">
+                    <div class="file-card file-card--system">
                         <span class="file-date">2026.02.01</span>
-                        <span class="file-type">NETWORK</span>
+                        <span class="file-type file-type--network">NETWORK</span>
                         <span class="file-link">Vibraline Hub Online</span>
                     </div>
                 </div>
@@ -189,7 +147,8 @@
 
         <!-- Footer -->
         <footer class="hub-footer">
-            <p>VIBRALINE INTELLIGENCE NETWORK // QBU v0.1 // CLASSIFIED MATERIAL</p>
+            <p>&copy; 2026 The Quantum Body Universe. All characters, lore, and content are intellectual property of the creator.</p>
+            <p class="footer-version">VIBRALINE INTELLIGENCE NETWORK // QBU v0.1</p>
         </footer>
     </div>
 

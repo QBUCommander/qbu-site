@@ -11,10 +11,13 @@ const enterBtn = document.getElementById('enter-btn');
 const logoutBtn = document.getElementById('logout-btn');
 const clearanceBadge = document.getElementById('clearance-badge');
 const navLinks = document.querySelectorAll('.nav-link');
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mainNav = document.getElementById('main-nav');
+const navOverlay = document.getElementById('nav-overlay');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    // Check if user has a saved session
+    // Check for saved session
     const savedClearance = localStorage.getItem('clearance');
     const savedEmail = localStorage.getItem('email');
     
@@ -29,67 +32,93 @@ document.addEventListener('DOMContentLoaded', () => {
     enterBtn.addEventListener('click', handleEnter);
     logoutBtn.addEventListener('click', handleLogout);
     
-    // Navigation
+    // Hamburger menu
+    hamburgerBtn.addEventListener('click', toggleNav);
+    navOverlay.addEventListener('click', closeNav);
+    
+    // Close nav when a link is clicked (mobile)
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             
-            // Allow actual navigation for links to other pages
+            // Close mobile nav on any click
+            closeNav();
+            
+            // Allow navigation for links to other pages
             if (href.includes('.html') || href.startsWith('http')) {
-                return; // Let the link navigate normally
+                return;
             }
             
             // Only prevent default for same-page anchors
             e.preventDefault();
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
-            console.log('Navigating to:', href);
         });
     });
 });
 
-// Handle clearance selection
-function handleClearanceChange() {
-    const selected = clearanceSelect.value;
-    
-    if (selected === 'observer' || selected === 'initiate' || selected === 'vibraline') {
-        emailInput.style.display = 'block';
-    } else {
-        emailInput.style.display = 'none';
-    }
+// ============================================
+// HAMBURGER NAV
+// ============================================
+
+function toggleNav() {
+    hamburgerBtn.classList.toggle('open');
+    mainNav.classList.toggle('open');
+    navOverlay.classList.toggle('active');
+    document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
 }
 
-// Handle enter button
+function closeNav() {
+    hamburgerBtn.classList.remove('open');
+    mainNav.classList.remove('open');
+    navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close nav on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+        closeNav();
+    }
+});
+
+// ============================================
+// CLEARANCE & LOGIN
+// ============================================
+
+function handleClearanceChange() {
+    const selected = clearanceSelect.value;
+    emailInput.style.display = 
+        (selected === 'observer' || selected === 'initiate' || selected === 'vibraline') 
+        ? 'block' : 'none';
+}
+
 function handleEnter() {
     const selected = clearanceSelect.value;
     const email = document.getElementById('email').value;
     
-    // Validation for paid tiers
-    if (selected === 'observer' || selected === 'initiate' || selected === 'vibraline') {
+    // Validation for non-guest tiers
+    if (selected !== 'guest') {
         if (!email || !validateEmail(email)) {
             showNotification('Valid email required for this clearance level', 'error');
             return;
         }
     }
     
-    // In a real implementation, this would check Substack subscription status
+    // Future: Check Substack subscription for paid tiers
     if (selected === 'initiate' || selected === 'vibraline') {
-        // For now, we'll simulate the check
-        console.log('Checking subscription status for:', email);
-        // This would integrate with Substack API
+        console.log('[AUTH] Checking subscription status for:', email);
     }
     
     currentClearance = selected;
     userEmail = email;
     
-    // Save to localStorage
     localStorage.setItem('clearance', currentClearance);
     localStorage.setItem('email', userEmail);
     
     enterHub();
 }
 
-// Enter the hub
 function enterHub() {
     loginScreen.classList.remove('active');
     mainHub.classList.add('active');
@@ -99,19 +128,17 @@ function enterHub() {
     clearanceBadge.style.borderColor = getClearanceColor(currentClearance);
     clearanceBadge.style.color = getClearanceColor(currentClearance);
     
-    // Add vibraline-tier class for green styling
     if (currentClearance === 'vibraline') {
         clearanceBadge.classList.add('vibraline-tier');
     } else {
         clearanceBadge.classList.remove('vibraline-tier');
     }
     
-    // Load initial content
-    loadSystemFeed();
+    // Load hub data
+    loadHubConfig();
     applyAccessRestrictions();
 }
 
-// Handle logout
 function handleLogout() {
     if (confirm('Terminate session and logout?')) {
         localStorage.removeItem('clearance');
@@ -126,143 +153,63 @@ function handleLogout() {
         clearanceSelect.value = 'guest';
         document.getElementById('email').value = '';
         emailInput.style.display = 'none';
+        
+        closeNav();
     }
 }
 
-// Get clearance color
-function getClearanceColor(clearance) {
-    const colors = {
-        'guest': '#7BA7BC',
-        'observer': '#00D9FF',
-        'initiate': '#00FFFF',
-        'vibraline': '#00FF88'
-    };
-    return colors[clearance] || '#7BA7BC';
-}
+// ============================================
+// HUB DATA
+// ============================================
 
-// Validate email
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-// Show notification
-function showNotification(message, type = 'info') {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 1rem 1.5rem;
-        background: rgba(10, 14, 39, 0.95);
-        border: 2px solid ${type === 'error' ? '#FF0055' : '#00D9FF'};
-        color: ${type === 'error' ? '#FF0055' : '#00D9FF'};
-        font-family: 'Courier New', monospace;
-        font-size: 0.85rem;
-        z-index: 10000;
-        box-shadow: 0 0 20px ${type === 'error' ? 'rgba(255, 0, 85, 0.3)' : 'rgba(0, 217, 255, 0.3)'};
-    `;
-    notification.textContent = message;
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.style.transition = 'opacity 0.5s ease';
-        notification.style.opacity = '0';
-        setTimeout(() => notification.remove(), 500);
-    }, 3000);
-}
-
-// Load system feed from hub-config.json and system-feed.json
-async function loadSystemFeed() {
+async function loadHubConfig() {
     try {
-        // Load hub config
         const response = await fetch('hub-config.json');
-        if (response.ok) {
-            const config = await response.json();
-            
-            // Update system status
-            const statusMsg = document.getElementById('creator-status');
-            const statusTimestamp = document.querySelector('.status-timestamp');
-            if (statusMsg && config.systemStatus) {
-                statusMsg.textContent = config.systemStatus.message;
-            }
-            if (statusTimestamp && config.systemStatus) {
-                statusTimestamp.textContent = `LAST UPDATE: ${config.systemStatus.lastUpdate}`;
-            }
-            
-            // Update recent files
-            const recentFiles = document.getElementById('recent-files');
-            if (recentFiles && config.recentFiles) {
-                recentFiles.innerHTML = config.recentFiles.map(f => {
-                    if (f.link) {
-                        return `<a href="${f.link}" class="file-card">
-                            <span class="file-date">${f.date}</span>
-                            <span class="file-type">${f.type}</span>
-                            <span class="file-link">${f.label}</span>
-                        </a>`;
-                    } else {
-                        return `<div class="file-card non-clickable">
-                            <span class="file-date">${f.date}</span>
-                            <span class="file-type">${f.type}</span>
-                            <span class="file-link">${f.label}</span>
-                        </div>`;
-                    }
-                }).join('');
-            }
-            
-            console.log('[HUB] Config loaded.');
+        if (!response.ok) return;
+        
+        const config = await response.json();
+        
+        // Update system status
+        const statusMsg = document.getElementById('creator-status');
+        const statusTimestamp = document.querySelector('.status-timestamp');
+        
+        if (statusMsg && config.systemStatus) {
+            statusMsg.textContent = config.systemStatus.message;
         }
+        if (statusTimestamp && config.systemStatus) {
+            statusTimestamp.textContent = `LAST UPDATE: ${config.systemStatus.lastUpdate}`;
+        }
+        
+        // Update recent files
+        const recentFiles = document.getElementById('recent-files');
+        if (recentFiles && config.recentFiles) {
+            recentFiles.innerHTML = config.recentFiles.map(f => {
+                if (f.link) {
+                    return `<a href="${f.link}" class="file-card">
+                        <span class="file-date">${f.date}</span>
+                        <span class="file-type">${f.type}</span>
+                        <span class="file-link">${f.label}</span>
+                    </a>`;
+                } else {
+                    return `<div class="file-card file-card--system">
+                        <span class="file-date">${f.date}</span>
+                        <span class="file-type file-type--${f.type.toLowerCase()}">${f.type}</span>
+                        <span class="file-link">${f.label}</span>
+                    </div>`;
+                }
+            }).join('');
+        }
+        
+        console.log('[HUB] Config loaded.');
     } catch (err) {
         console.log('[HUB] Could not load hub-config.json:', err.message);
     }
-    
-    // Load system feed notes
-    loadSystemNotes();
 }
 
-// Load system feed from system-feed.json
-async function loadSystemNotes() {
-    const feedContainer = document.getElementById('feed-container');
-    if (!feedContainer) return;
-    
-    try {
-        const response = await fetch('system-feed.json');
-        if (!response.ok) throw new Error('Failed to load system-feed.json');
-        
-        const notes = await response.json();
-        
-        if (notes.length > 0) {
-            feedContainer.innerHTML = '';
-            
-            notes.forEach(note => {
-                const tagHtml = note.tags ? note.tags.map(t => 
-                    `<span class="note-tag">${t}</span>`
-                ).join(' ') : '';
-                
-                feedContainer.innerHTML += `
-                    <div class="substack-note">
-                        <span class="note-timestamp">${note.date}</span>
-                        <p class="note-content">${note.text}</p>
-                        ${tagHtml ? `<div class="note-tags">${tagHtml}</div>` : ''}
-                    </div>
-                `;
-            });
-            
-            console.log('[HUB] System feed loaded:', notes.length, 'notes');
-        } else {
-            feedContainer.innerHTML = '<p class="feed-note" style="text-align:center;opacity:0.4;">No transmissions yet.</p>';
-        }
-    } catch (err) {
-        console.log('[HUB] System feed error:', err.message);
-        if (feedContainer) {
-            feedContainer.innerHTML = '<p class="feed-note" style="text-align:center;opacity:0.4;">Feed loading...</p>';
-        }
-    }
-}
+// ============================================
+// ACCESS CONTROL
+// ============================================
 
-// Apply access restrictions based on clearance
 function applyAccessRestrictions() {
     const restrictedElements = document.querySelectorAll('[data-clearance]');
     
@@ -270,7 +217,6 @@ function applyAccessRestrictions() {
         const requiredClearance = element.getAttribute('data-clearance');
         
         if (!hasAccess(requiredClearance)) {
-            // Add redacted overlay
             const overlay = document.createElement('div');
             overlay.className = 'redacted-overlay';
             overlay.innerHTML = `
@@ -286,27 +232,63 @@ function applyAccessRestrictions() {
     });
 }
 
-// Check if user has access to content
 function hasAccess(requiredClearance) {
-    const clearanceLevels = {
-        'guest': 0,
-        'observer': 1,
-        'initiate': 2,
-        'vibraline': 3
-    };
-    
-    return clearanceLevels[currentClearance] >= clearanceLevels[requiredClearance];
+    const levels = { 'guest': 0, 'observer': 1, 'initiate': 2, 'vibraline': 3 };
+    return levels[currentClearance] >= levels[requiredClearance];
 }
 
-// Add styles for redacted content dynamically
-const style = document.createElement('style');
-style.textContent = `
+// ============================================
+// UTILITIES
+// ============================================
+
+function getClearanceColor(clearance) {
+    const colors = {
+        'guest': '#7BA7BC',
+        'observer': '#00D9FF',
+        'initiate': '#00FFFF',
+        'vibraline': '#00FF88'
+    };
+    return colors[clearance] || '#7BA7BC';
+}
+
+function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    const color = type === 'error' ? '#FF0055' : '#00D9FF';
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1rem 1.5rem;
+        background: rgba(10, 14, 39, 0.95);
+        border: 2px solid ${color};
+        color: ${color};
+        font-family: 'Courier New', monospace;
+        font-size: 0.85rem;
+        z-index: 10000;
+        box-shadow: 0 0 20px ${color}33;
+        max-width: 90vw;
+    `;
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.transition = 'opacity 0.5s ease';
+        notification.style.opacity = '0';
+        setTimeout(() => notification.remove(), 500);
+    }, 3000);
+}
+
+// Redacted overlay styles
+const redactedStyles = document.createElement('style');
+redactedStyles.textContent = `
     .redacted-overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
         background: rgba(0, 0, 0, 0.9);
         backdrop-filter: blur(10px);
         display: flex;
@@ -315,47 +297,24 @@ style.textContent = `
         z-index: 10;
         border: 2px solid #FF0055;
     }
-    
     .redacted-content {
         text-align: center;
         color: #FF0055;
     }
-    
     .redacted-icon {
-        font-size: 3rem;
+        font-size: 2.5rem;
         display: block;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
         filter: drop-shadow(0 0 10px #FF0055);
     }
-    
     .redacted-content p {
-        margin: 0.5rem 0;
+        margin: 0.4rem 0;
         letter-spacing: 0.2rem;
         font-weight: bold;
     }
-    
     .redacted-requirement {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         color: #7BA7BC;
     }
 `;
-document.head.appendChild(style);
-
-// Simulated API functions (to be replaced with real API calls)
-async function fetchSubstackPosts() {
-    // This would use the Substack API
-    // Example: https://yoursubstack.substack.com/api/v1/posts
-    return [];
-}
-
-async function fetchYouTubeVideos() {
-    // This would use the YouTube Data API
-    // Example: https://www.googleapis.com/youtube/v3/search
-    return [];
-}
-
-async function fetchSiteUpdates() {
-    // This would read from a JSON file you update
-    // Example: /data/updates.json
-    return [];
-}
+document.head.appendChild(redactedStyles);
